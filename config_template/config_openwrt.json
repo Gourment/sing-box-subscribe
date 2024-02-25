@@ -97,7 +97,7 @@
       "auto_route": true,
       "strict_route": true,
       "sniff": true,
-      "stack": "system",
+      "stack": "mixed",
       "platform": {
         "http_proxy": {
           "enabled": true,
