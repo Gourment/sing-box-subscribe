@@ -436,14 +436,14 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
         "download_detour": "🎯 直连"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/geolocation-!cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
         "download_detour": "🎯 直连"
       },
       {
@@ -478,7 +478,7 @@
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/Toperlock/sing-box-geosite/raw/refs/heads/main/rule/YouTube.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
         "download_detour": "🎯 直连"
       },
       {
