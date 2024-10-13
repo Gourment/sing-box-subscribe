@@ -444,56 +444,56 @@
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "category-companies@cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-companies@cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-companies@cn.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "gfw",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/gfw.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/gfw.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "onedrive",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "github",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
         "download_detour": "🚀 国内直达"
       },
       {
@@ -507,21 +507,21 @@
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs",
         "download_detour": "🚀 国内直达"
       },
       {
@@ -563,21 +563,21 @@
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "tag": "speedtest",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/speedtest.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/speedtest.srs",
         "download_detour": "🚀 国内直达"
       },
       {
