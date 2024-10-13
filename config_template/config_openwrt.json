@@ -70,7 +70,7 @@
         "server": "dns_proxy"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geolocation-!cn",
         "query_type": ["A", "AAAA"],
         "server": "dns_fakeip",
         "rewrite_ttl": 1
