@@ -32,17 +32,9 @@
       {
         "tag": "dns_fakeip",
         "address": "fakeip"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
       }
     ],
     "rules": [
-      {
-        "rule_set": "category-ads-all",
-        "server": "block"
-      },
       {
         "outbound": "any",
         "server": "dns_direct",
@@ -332,14 +324,6 @@
         "outbound": "dns-out"
       },
       {
-        "ip_is_private": true,
-        "outbound": "🚀 国内直达"
-      },
-      {
-        "rule_set": "category-ads-all",
-        "outbound": "⛔️ 广告拦截"
-      },
-      {
         "clash_mode": "Direct",
         "outbound": "🎯 直连"
       },
@@ -408,15 +392,7 @@
         "outbound":"🥇 Speedtest"
       },
       {
-        "rule_set": "gfw",
-        "outbound": "🌏 国际代理"
-      },
-      {
         "rule_set": "chinadomain",
-        "outbound": "🚀 国内直达"
-      },
-      {
-        "rule_set": "category-companies@cn",
         "outbound": "🚀 国内直达"
       },
       {
@@ -432,12 +408,12 @@
         "outbound":"📟 Telegram"
       },
       {
-        "rule_set":["apple_services"],
-        "outbound":"🍎 Apple"
+        "ip_is_private": true,
+        "outbound": "🚀 国内直达"
       },
       {
-        "rule_set":"geoip-google",
-        "outbound":"📲 谷歌服务"
+        "rule_set":["apple_services"],
+        "outbound":"🍎 Apple"
       },
       {
         "rule_set":"telegram-ip",
@@ -460,14 +436,7 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "hhttps://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-        "download_detour": "🎯 直连"
-      },
-      {
-        "tag": "category-companies@cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/category-companies@cn.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "🎯 直连"
       },
       {
@@ -478,24 +447,24 @@
         "download_detour": "🎯 直连"
       },
       {
-        "tag": "category-ads-all",
+        "tag": "microsoft",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/category-ads-all.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-microsoft.srs",
         "download_detour": "🎯 直连"
       },
       {
         "tag": "onedrive",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/onedrive.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
         "download_detour": "🎯 直连"
       },
       {
         "tag": "github",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/github.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs",
         "download_detour": "🎯 直连"
       },
       {
@@ -509,21 +478,14 @@
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/youtube.srs",
-        "download_detour": "🎯 直连"
-      },
-      {
-        "tag": "geoip-google",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geoip/google.srs",
+        "url": "https://github.com/Toperlock/sing-box-geosite/raw/refs/heads/main/rule/YouTube.srs",
         "download_detour": "🎯 直连"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/google.srs",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-google.srs",
         "download_detour": "🎯 直连"
       },
       {
@@ -562,24 +524,17 @@
         "download_detour": "🎯 直连"
       },
       {
-        "tag": "microsoft",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/microsoft.srs",
-        "download_detour": "🎯 直连"
-      },
-      {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/tiktok.srs",
+        "url": "https://github.com/Toperlock/sing-box-geosite/raw/refs/heads/main/rule/TikTok.srs",
         "download_detour": "🎯 直连"
       },
       {
         "tag": "speedtest",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/sing/geo/geosite/speedtest.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-speedtest.srs",
         "download_detour": "🎯 直连"
       },
       {
