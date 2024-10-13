@@ -18,7 +18,7 @@
       "store_fakeip": false
     },
     "clash_api": {
-      "external_controller": "192.168.2.2:9090",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
       "external_ui_download_url": "",
       "external_ui_download_detour": "🌏 国际代理",
