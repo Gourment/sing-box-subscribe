@@ -1,6 +1,6 @@
 {
   "log": {
-    "level": "debug",
+    "level": "info",
     "timestamp": true
   },
   "experimental": {
@@ -441,126 +441,126 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-microsoft.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "onedrive",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "github",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "openai",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-google.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "telegram",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "telegram-ip",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "telegram_asn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "apple_cdn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "apple_services",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-tiktok.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "geosite-line",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-line.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "speedtest",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-speedtest.srs",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       },
       {
         "tag": "chinadomain",
         "type": "remote",
         "format": "source",
         "url": "https://cdn.jsdelivr.net/gh/Gourment/PrivateClashRules@main/Chinadomain.json",
-        "download_detour": "🎯 直连"
+        "download_detour": "🌏 国际代理"
       }
     ]
   }
