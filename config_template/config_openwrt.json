@@ -445,147 +445,147 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "category-companies@cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-companies@cn.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "gfw",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/gfw.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "category-ads-all",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "onedrive",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "github",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "openai",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "telegram",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "telegram-ip",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "telegram_asn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "apple_cdn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "apple_services",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "speedtest",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/speedtest.srs",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       },
       {
         "tag": "chinadomain",
         "type": "remote",
         "format": "source",
         "url": "https://raw.githubusercontent.com/Gourment/PrivateClashRules/main/Chinadomain.json",
-        "download_detour": "direct"
+        "download_detour": "🎯 直连"
       }
     ]
   }
