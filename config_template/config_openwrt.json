@@ -189,6 +189,32 @@
       ]
     },
     {
+      "tag":"📱 Line",
+      "type":"selector",
+      "outbounds":[        
+        "🇹🇭 泰国节点",
+        "🇺🇸 美国节点",
+        "🇭🇰 香港节点"
+      ]
+    },
+    {
+      "tag":"🎵 TikTok",
+      "type":"selector",
+      "outbounds":[
+        "🇹🇭 泰国节点",
+        "🇺🇸 美国节点",
+        "🕹 手动切换"
+      ]
+    },
+    {
+      "tag":"🤖 AI工具",
+      "type":"selector",
+      "outbounds":[
+        "🇺🇸 美国节点",
+        "🇭🇰 香港节点"
+      ]
+    },
+    {
       "tag": "☁️ 云服务",
       "type": "selector",
       "outbounds": [
@@ -232,23 +258,6 @@
         "🇸🇬 狮城节点",
         "🇭🇰 香港节点",
         "🇺🇸 美国节点"
-      ]
-    },
-    {
-      "tag":"📱 Line",
-      "type":"selector",
-      "outbounds":[
-        "🇺🇸 美国节点",
-        "🇹🇭 泰国节点",
-        "🕹 手动切换"
-      ]
-    },
-    {
-      "tag":"🤖 AI工具",
-      "type":"selector",
-      "outbounds":[
-        "🇺🇸 美国节点",
-        "🇭🇰 香港节点"
       ]
     },
     {
