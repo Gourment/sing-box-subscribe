@@ -444,148 +444,148 @@
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "category-companies@cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-companies@cn.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-companies@cn.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "gfw",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/gfw.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/gfw.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "onedrive",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "github",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "openai",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "telegram",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "telegram-ip",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "telegram_asn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "apple_cdn",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "apple_services",
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "speedtest",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/speedtest.srs",
-        "download_detour": "🌏 国际代理"
+        "url": "https://testingcf.jsdelivr.net/gh//MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/speedtest.srs",
+        "download_detour": "🚀 国内直达"
       },
       {
         "tag": "chinadomain",
         "type": "remote",
         "format": "source",
         "url": "https://raw.githubusercontent.com/Gourment/PrivateClashRules/main/Chinadomain.json",
-        "download_detour": "🌏 国际代理"
+        "download_detour": "🚀 国内直达"
       }
     ]
   }
