@@ -235,15 +235,16 @@
       ]
     },
     {
-      "tag":"🎵 TikTok",
+      "tag":"📱 Line",
       "type":"selector",
       "outbounds":[
         "🇺🇸 美国节点",
+        "🇹🇭 泰国节点",
         "🕹 手动切换"
       ]
     },
     {
-      "tag":"🤖 OpenAI",
+      "tag":"🤖 AI工具",
       "type":"selector",
       "outbounds":[
         "🇺🇸 美国节点",
@@ -255,7 +256,7 @@
       "type":"selector",
       "outbounds":["{all}"],
       "filter": [
-        {"action": "include","keywords": ["香港","新加坡","美国","台湾","日本","韩国"]}
+        {"action": "include","keywords": ["香港","新加坡","美国","台湾","日本","泰国"]}
       ]
     },
     {
@@ -291,6 +292,17 @@
       "interval": "5m",
       "tolerance": 50
     },  
+    { 
+      "tag":"🇹🇭 泰国节点",
+      "type":"urltest",
+      "outbounds":["{all}"],
+      "filter": [
+        {"action": "include","keywords": ["泰国"]}
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 50
+    },
     {
       "type": "direct",
       "tag": "🎯 直连"
@@ -330,6 +342,10 @@
         "outbound": "🌏 国际代理"
       },
       {
+      "package_name": "jp.naver.line.android",
+      "outbound": "📱 Line"
+      },
+      {
         "domain_suffix": [
           "wechat.com",
           "servicewechat.com"
@@ -342,19 +358,15 @@
       },
       {
         "rule_set":"github",
-        "outbound":"🤖 OpenAI"
+        "outbound":"🤖 AI工具"
       },
       {
         "rule_set":"openai",
-        "outbound":"🤖 OpenAI"
+        "outbound":"🤖 AI工具"
       },
       {
         "rule_set":"youtube",
         "outbound":"🧿 YouTube"
-      },
-      {
-        "rule_set":"geoip-google",
-        "outbound":"📲 谷歌服务"
       },
       {
         "rule_set":"geosite-google",
@@ -365,7 +377,7 @@
         "outbound":"📟 Telegram"
       },
       {
-        "rule_set":"geosite-apple",
+        "rule_set":["apple_services","apple_cdn"],
         "outbound":"🍎 Apple"
       },
       {
@@ -389,20 +401,32 @@
         "outbound": "🚀 国内直达"
       },
       {
-        "rule_set": "geosite-cn",
-        "outbound": "🚀 国内直达"
-      },
-      {
         "rule_set": "category-companies@cn",
         "outbound": "🚀 国内直达"
       },
       {
-        "rule_set": "geoip-cn",
+        "rule_set": "geosite-cn",
         "outbound": "🚀 国内直达"
       },
       {
         "rule_set": "geolocation-!cn",
         "outbound": "🌏 国际代理"
+      },
+      {
+        "rule_set":"telegram_asn",
+        "outbound":"📟 Telegram"
+      },
+      {
+        "rule_set":"geoip-google",
+        "outbound":"📲 谷歌服务"
+      },
+      {
+        "rule_set":"telegram-ip",
+        "outbound":"📟 Telegram"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "🚀 国内直达"
       }
     ],
     "rule_set": [
@@ -465,8 +489,8 @@
       {
         "tag": "openai",
         "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/openai.srs",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json",
         "download_detour": "🌏 国际代理"
       },
       {
@@ -493,15 +517,36 @@
       {
         "tag": "telegram",
         "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/telegram.srs",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
         "download_detour": "🌏 国际代理"
       },
       {
-        "tag": "geosite-apple",
+        "tag": "telegram-ip",
         "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/apple.srs",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
+        "download_detour": "🌏 国际代理"
+      },
+      {
+        "tag": "telegram_asn",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
+        "download_detour": "🌏 国际代理"
+      },
+      {
+        "tag": "apple_cdn",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
+        "download_detour": "🌏 国际代理"
+      },
+      {
+        "tag": "apple_services",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
         "download_detour": "🌏 国际代理"
       },
       {
