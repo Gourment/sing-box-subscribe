@@ -326,6 +326,14 @@
         "outbound": "🎯 直连"
       },
       {
+        "clash_mode": "Direct",
+        "outbound": "🎯 直连"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "🌏 国际代理"
+      },
+      {
         "domain_suffix": [
           "wechat.com",
           "servicewechat.com"
