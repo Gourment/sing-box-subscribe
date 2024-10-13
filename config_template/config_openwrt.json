@@ -20,76 +20,87 @@
   "dns": {
     "servers": [
       {
-        "tag": "dns_proxy",
-        "address": "tls://8.8.8.8",
+        "tag": "proxyDns",
+        "address": "tls://1.1.1.1",
         "detour": "🌏 国际代理"
       },
       {
-        "tag": "dns_direct",
+        "tag": "localDns",
         "address": "https://223.5.5.5/dns-query",
         "detour": "🎯 直连"
       },
       {
-        "tag": "dns_fakeip",
-        "address": "fakeip"
+        "tag": "block",
+        "address": "rcode://success"
       }
     ],
     "rules": [
       {
-        "outbound": "any",
-        "server": "dns_direct",
+        "rule_set": "category-ads-all",
+        "server": "block",
         "disable_cache": true
       },
       {
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
+        "outbound": "any",
+        "server": "localDns",
+        "disable_cache": true
       },
       {
-        "clash_mode": "direct",
-        "server": "dns_direct"
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": [
+              "geosite-cn",
+              "chinadomain",
+              "category-companies@cn"
+            ]
+          }
+        ],
+        "server": "localDns"
       },
       {
-        "clash_mode": "global",
-        "server": "dns_proxy"
+        "clash_mode": "Direct",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "proxyDns"
       },
       {
         "rule_set": "geolocation-!cn",
-        "query_type": ["A", "AAAA"],
-        "server": "dns_fakeip",
-        "rewrite_ttl": 1
+        "server": "proxyDns"
       }
     ],
-    "final": "dns_direct",
-    "strategy": "ipv4_only",
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    }
+    "independent_cache": true,
+    "strategy": "ipv4_only"
   },    
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "inet4_address": "172.19.0.1/30",
-      "inet6_address": "fdfe:dcba:9876::1/126",
+      "mtu": 9000,
       "auto_route": true,
-      "strict_route": false,
+      "strict_route": true,
       "sniff": true,
-      "endpoint_independent_nat": false,
       "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
           "server": "127.0.0.1",
-          "server_port": 7890
+          "server_port": 2080
         }
       }
     },
     {
       "type": "mixed",
-      "domain_strategy": "ipv4_only",
       "listen": "127.0.0.1",
-      "listen_port": 7890,
+      "listen_port": 2080,
       "sniff": true,
       "users": []
     }
@@ -324,14 +335,6 @@
         "outbound": "dns-out"
       },
       {
-        "clash_mode": "Direct",
-        "outbound": "🎯 直连"
-      },
-      {
-        "clash_mode": "Global",
-        "outbound": "🌏 国际代理"
-      },
-      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -339,10 +342,6 @@
           "d.metacubex.one"
         ],
         "outbound": "🎯 直连"
-      },
-      {
-      "package_name": "jp.naver.line.android",
-      "outbound": "📱 Line"
       },
       {
         "domain_suffix": [
@@ -384,8 +383,30 @@
         "outbound":"🪟 Microsoft"
       },
       {
-        "rule_set":"tiktok",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set":"tiktok"
+          },
+          {
+            "package_name": "com.zhiliaoapp.musically"
+          }
+        ],
         "outbound":"🎵 TikTok"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set":"geosite-line"
+          },
+          {
+            "package_name": "jp.naver.line.android"
+          }
+        ],
+        "outbound":"📱 Line"
       },
       {
         "rule_set":"speedtest",
@@ -527,7 +548,14 @@
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/Toperlock/sing-box-geosite/raw/refs/heads/main/rule/TikTok.srs",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-tiktok.srs",
+        "download_detour": "🎯 直连"
+      },
+      {
+        "tag": "geosite-line",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-line.srs",
         "download_detour": "🎯 直连"
       },
       {
