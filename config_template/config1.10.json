@@ -72,10 +72,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "address": [
-        "172.18.18.1/24",
-        "fdfe:dcba:9876::1/112"
-      ],
+      "address": "172.18.18.1/24",
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
