@@ -32,10 +32,12 @@
     ],
     "rules": [
       {
-        "outbound": "any",
-        "server": "localDns",
-        "disable_cache": true
-      },
+        "wifi_ssid": [
+          "SSSSS"
+        ],
+        "action": "route",
+        "server": "localDns"
+      }
       {
         "type": "logical",
         "mode": "and",
@@ -51,33 +53,39 @@
             ]
           }
         ],
+        "action": "route",
         "server": "localDns"
       },
       {
         "clash_mode": "Direct",
+        "action": "route",
         "server": "localDns"
       },
       {
         "clash_mode": "Global",
+        "action": "route",
         "server": "proxyDns"
       },
       {
         "rule_set": "geolocation-!cn",
+        "action": "route",
         "server": "proxyDns"
       }
     ],
     "independent_cache": true,
-    "strategy": "ipv4_only"
+    "strategy": "prefer_ipv4"
   },    
   "inbounds": [
     {
       "type": "tun",
       "tag": "tun-in",
-      "inet4_address": "172.19.0.1/30",
+      "address": [
+        "172.18.18.1/24",
+        "fdfe:dcba:9876::1/112"
+      ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
-      "sniff": true,
       "stack": "system",
       "platform": {
         "http_proxy": {
@@ -89,9 +97,9 @@
     },
     {
       "type": "mixed",
+      "tag": "mixed-in",
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "sniff": true,
       "users": []
     }
   ],
@@ -288,14 +296,6 @@
     {
       "type": "direct",
       "tag": "🎯 直连"
-    },
-    {
-      "type": "block",
-      "tag": "🚫 拦截"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
     }
   ],
   "route": {
@@ -304,17 +304,23 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
+        "wifi_ssid": [
+          "SSSSS"
         ],
-        "outbound": "dns-out"
+        "action": "route",
+        "outbound": "🎯 直连",
+      },
+      {
+        "action": "sniff"
+      },
+      {
+        "inbound": "mixed-in",
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
       },
       {
         "domain": [
@@ -323,6 +329,7 @@
           "yacd.haishan.me",
           "d.metacubex.one"
         ],
+        "action": "route",
         "outbound": "🎯 直连"
       },
       {
@@ -338,100 +345,112 @@
           "wechat.com",
           "servicewechat.com"
         ],
+        "action": "route",
         "outbound": "🔰 WeChat"
       },
       {
         "rule_set":"onedrive",
+        "action": "route",
         "outbound":"☁️ 云服务"
       },
       {
         "rule_set":"github",
+        "action": "route",
         "outbound":"🤖 AI工具"
       },
       {
         "rule_set":"openai",
+        "action": "route",
         "outbound":"🤖 AI工具"
       },
       {
         "rule_set":"youtube",
+        "action": "route",
         "outbound":"🧿 YouTube"
       },
       {
         "rule_set":"geosite-google",
+        "action": "route",
         "outbound":"📲 谷歌服务"
       },
       {
         "rule_set":"telegram",
+        "action": "route",
         "outbound":"📟 Telegram"
       },
       {
         "rule_set":["apple_cdn"],
+        "action": "route",
         "outbound":"🍎 Apple"
       },
       {
         "rule_set":"microsoft",
+        "action": "route",
         "outbound":"🪟 Microsoft"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set":"tiktok"
-          },
-          {
-            "package_name": "com.zhiliaoapp.musically"
-          }
-        ],
+        "rule_set":"tiktok",
+        "action": "route",
         "outbound":"🎵 TikTok"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set":"geosite-line"
-          },
-          {
-            "package_name": "jp.naver.line.android"
-          }
-        ],
+        "package_name": "com.zhiliaoapp.musically",
+        "action": "route",
+        "outbound":"🎵 TikTok"
+      },
+      {
+        "rule_set":"geosite-line",
+        "action": "route",
+        "outbound":"📱 Line"
+      },
+      {
+        "package_name": "jp.naver.line.android",
+        "action": "route",
         "outbound":"📱 Line"
       },
       {
         "rule_set":"speedtest",
+        "action": "route",
         "outbound":"🥇 Speedtest"
       },
       {
         "rule_set": "chinadomain",
+        "action": "route",
         "outbound": "🚀 国内直达"
       },
       {
         "rule_set": "geosite-cn",
+        "action": "route",
         "outbound": "🚀 国内直达"
       },
       {
         "rule_set": "geolocation-!cn",
+        "action": "route",
         "outbound": "🌏 国际代理"
       },
       {
         "rule_set":"telegram_asn",
+        "action": "route",
         "outbound":"📟 Telegram"
       },
       {
         "ip_is_private": true,
+        "action": "route",
         "outbound": "🚀 国内直达"
       },
       {
         "rule_set":["apple_services"],
+        "action": "route",
         "outbound":"🍎 Apple"
       },
       {
         "rule_set":"telegram-ip",
+        "action": "route",
         "outbound":"📟 Telegram"
       },
       {
         "rule_set": "geoip-cn",
+        "action": "route",
         "outbound": "🚀 国内直达"
       }
     ],
