@@ -303,8 +303,17 @@
         "action": "route",
         "outbound": "🎯 直连"
       },
-      {
-        "action": "sniff"
+       {
+        "inbound": "tun-in",
+        "action": "sniff",
+        "sniffer": [
+          "dns",
+          "bittorrent",
+          "http",
+          "tls",
+          "quic",
+          "dtls"
+        ]
       },
       {
         "protocol": "dns",
