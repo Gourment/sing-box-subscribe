@@ -32,10 +32,6 @@
     ],
     "rules": [
       {
-        "outbound": "any",
-        "server": "localDns"
-      },
-      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -69,6 +65,7 @@
         "server": "proxyDns"
       }
     ],
+    "final": "proxyDns",
     "independent_cache": true,
     "strategy": "prefer_ipv4"
   },    
