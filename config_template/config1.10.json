@@ -32,6 +32,10 @@
     ],
     "rules": [
       {
+        "outbound": "any",
+        "server": "localDns"
+      },
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
