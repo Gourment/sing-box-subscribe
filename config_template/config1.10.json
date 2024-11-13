@@ -32,13 +32,6 @@
     ],
     "rules": [
       {
-        "wifi_ssid": [
-          "SSSSS"
-        ],
-        "action": "route",
-        "server": "localDns"
-      },
-      {
         "type": "logical",
         "mode": "and",
         "rules": [
