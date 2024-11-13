@@ -65,7 +65,10 @@
         "server": "proxyDns"
       }
     ],
-    "independent_cache": true,
+    "final": "proxyDns",
+    "reverse_mapping": true,
+    "disable_cache": false,
+    "disable_expire": false,
     "strategy": "prefer_ipv4"
   },    
   "inbounds": [
