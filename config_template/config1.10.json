@@ -286,13 +286,6 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
-      {
-        "wifi_ssid": [
-          "SSSSS"
-        ],
-        "action": "route",
-        "outbound": "🎯 直连"
-      },
        {
         "inbound": "tun-in",
         "action": "sniff",
