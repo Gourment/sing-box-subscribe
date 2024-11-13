@@ -37,7 +37,7 @@
         ],
         "action": "route",
         "server": "localDns"
-      }
+      },
       {
         "type": "logical",
         "mode": "and",
@@ -308,7 +308,7 @@
           "SSSSS"
         ],
         "action": "route",
-        "outbound": "🎯 直连",
+        "outbound": "🎯 直连"
       },
       {
         "action": "sniff"
