@@ -94,13 +94,6 @@
           "server_port": 2080
         }
       }
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2080,
-      "users": []
     }
   ],
   "outbounds": [
@@ -312,11 +305,6 @@
       },
       {
         "action": "sniff"
-      },
-      {
-        "inbound": "mixed-in",
-        "action": "resolve",
-        "strategy": "prefer_ipv4"
       },
       {
         "protocol": "dns",
