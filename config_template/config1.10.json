@@ -28,7 +28,7 @@
       },
       {
         "tag": "localDns",
-        "address": "114.114.114.114",
+        "address": "local",
         "detour": "🎯 直连"
       }
     ],
@@ -293,12 +293,15 @@
     "rules": [
        {
         "inbound": "tun-in",
-        "action": "resolve",
-        "strategy": "ipv4_only"
-      },
-       {
         "action": "sniff",
-        "sniffer": []
+        "sniffer": [
+          "dns",
+          "bittorrent",
+          "http",
+          "tls",
+          "quic",
+          "dtls"
+        ]
       },
       {
         "protocol": "dns",
