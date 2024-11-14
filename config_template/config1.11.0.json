@@ -55,6 +55,10 @@
         "server": "localDns"
       },
       {
+        "rule_set": "geolocation-!cn",
+        "server": "proxyDns"
+      },
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
