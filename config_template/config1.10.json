@@ -34,6 +34,16 @@
     ],
     "rules": [
       {
+        "clash_mode": "Direct",
+        "action": "route",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "Global",
+        "action": "route",
+        "server": "proxyDns"
+      },
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -50,16 +60,6 @@
         ],
         "action": "route",
         "server": "localDns"
-      },
-      {
-        "clash_mode": "Direct",
-        "action": "route",
-        "server": "localDns"
-      },
-      {
-        "clash_mode": "Global",
-        "action": "route",
-        "server": "proxyDns"
       },
       {
         "rule_set": "geolocation-!cn",
@@ -297,16 +297,8 @@
         "strategy": "ipv4_only"
       },
        {
-        "inbound": "tun-in",
         "action": "sniff",
-        "sniffer": [
-          "dns",
-          "bittorrent",
-          "http",
-          "tls",
-          "quic",
-          "dtls"
-        ]
+        "sniffer": []
       },
       {
         "protocol": "dns",
