@@ -311,16 +311,6 @@
         "action": "hijack-dns"
       },
       {
-        "inbound": "mixed-in",
-        "action": "resolve",
-        "strategy": "ipv4_only"
-      },
-      {
-        "inbound": "mixed-in",
-        "action": "sniff",
-        "timeout": "1s"
-      },
-      {
         "ip_is_private": true,
         "action": "route",
         "outbound": "🚀 国内直达"
