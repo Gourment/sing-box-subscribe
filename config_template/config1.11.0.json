@@ -297,12 +297,6 @@
         "action": "sniff"
       },
       {
-        "network": "udp",
-        "port": 443,
-        "action": "reject",
-        "method": "drop"
-      },
-      {
         "protocol": "dns",
         "action": "hijack-dns"
       },
