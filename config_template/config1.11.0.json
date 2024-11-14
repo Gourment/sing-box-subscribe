@@ -82,7 +82,10 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "address": "172.18.18.1/24",
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -91,7 +94,7 @@
         "http_proxy": {
           "enabled": true,
           "server": "127.0.0.1",
-          "server_port": 2080
+          "server_port": 7980
         }
       }
     },
@@ -302,6 +305,11 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
+      {
+        "inbound": "mixed-in",
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
       {
         "action": "sniff"
       },
