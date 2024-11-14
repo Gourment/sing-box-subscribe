@@ -23,7 +23,6 @@
         "tag": "proxyDns",
         "address": "https://1.1.1.1/dns-query",
         "address_resolver": "localDns",
-        "client_subnet": "218.1.0.0",
         "detour": "🌏 国际代理"
       },
       {
@@ -83,8 +82,7 @@
       "type": "tun",
       "tag": "tun-in",
       "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
+        "172.19.0.0/30"
       ],
       "mtu": 9000,
       "auto_route": true,
