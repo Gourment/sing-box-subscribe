@@ -28,15 +28,11 @@
       },
       {
         "tag": "localDns",
-        "address": "local",
+        "address": "udp://223.5.5.5",
         "detour": "🎯 直连"
       }
     ],
     "rules": [
-      {
-        "outbound": "any",
-        "server": "local"
-      },
       {
         "clash_mode": "Direct",
         "action": "route",
@@ -295,11 +291,6 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
-      {
-        "inbound": "tun-in",
-        "action": "resolve",
-        "strategy": "ipv4_only"
-      },
       {
         "action": "sniff"
       },
