@@ -37,6 +37,17 @@
         "disable_cache": true
       },
       {
+        "rule_set": [
+          "geosite-cn",
+          "chinadomain"
+        ],
+        "server": "localDns"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "server": "proxyDns"
+      }
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -45,13 +56,11 @@
             "invert": true
           },
           {
-            "rule_set": [
-              "geosite-cn",
-              "chinadomain"
-            ]
+            "rule_set": "geoip-cn"
           }
         ],
-        "server": "localDns"
+        "server": "proxyDns",
+        "client_subnet": "218.1.0.0"
       },
       {
         "clash_mode": "Direct",
@@ -59,10 +68,6 @@
       },
       {
         "clash_mode": "Global",
-        "server": "proxyDns"
-      },
-      {
-        "rule_set": "geolocation-!cn",
         "server": "proxyDns"
       }
     ],
