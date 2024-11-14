@@ -34,12 +34,6 @@
     ],
     "rules": [
       {
-        "wifi_ssid": [
-          "SSSSS"
-        ],
-        "server": "local"
-      },
-      {
         "outbound": "any",
         "server": "localDns"
       },
@@ -299,12 +293,6 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
-      {
-        "wifi_ssid": [
-          "SSSSS"
-        ],
-        "outbound": "🎯 直连"
-      },
       {
         "action": "sniff"
       },
