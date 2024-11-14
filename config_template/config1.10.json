@@ -34,6 +34,10 @@
     ],
     "rules": [
       {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
         "clash_mode": "Direct",
         "action": "route",
         "server": "localDns"
@@ -291,6 +295,11 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
+      {
+        "inbound": "tun-in",
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
       {
         "action": "sniff"
       },
