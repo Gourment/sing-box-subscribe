@@ -309,6 +309,11 @@
         "strategy": "ipv4_only"
       },
       {
+        "inbound": "mixed-in",
+        "action": "sniff",
+        "timeout": "1s"
+      }
+      {
         "action": "sniff"
       },
       {
