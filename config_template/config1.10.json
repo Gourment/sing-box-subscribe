@@ -294,6 +294,12 @@
     "auto_detect_interface": true,
     "rules": [
       {
+        "wifi_ssid": [
+          "SSSSS"
+        ],
+        "outbound": "🎯 直连"
+      },
+      {
         "action": "sniff"
       },
       {
