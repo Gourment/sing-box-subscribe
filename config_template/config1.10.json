@@ -291,17 +291,8 @@
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
-       {
-        "inbound": "tun-in",
-        "action": "sniff",
-        "sniffer": [
-          "dns",
-          "bittorrent",
-          "http",
-          "tls",
-          "quic",
-          "dtls"
-        ]
+      {
+        "action": "sniff"
       },
       {
         "protocol": "dns",
