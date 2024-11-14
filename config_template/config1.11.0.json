@@ -34,6 +34,12 @@
     ],
     "rules": [
       {
+        "wifi_ssid": [
+          "SSSSS"
+        ],
+        "server": "local"
+      },
+      {
         "outbound": "any",
         "server": "localDns"
       },
