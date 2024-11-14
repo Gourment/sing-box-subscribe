@@ -35,7 +35,8 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "localDns"
+        "action": "route",
+        "server": "local"
       },
       {
         "clash_mode": "Direct",
@@ -49,7 +50,7 @@
       },
       {
         "rule_set": [
-          "geolocation-!cn",
+          "geosite-cn",
           "chinadomain"
         ],
         "server": "localDns"
@@ -66,7 +67,9 @@
             "rule_set": "geoip-cn"
           }
         ],
-        "server": "proxyDns"
+        "server": "proxyDns",
+        "action": "route",
+        "client_subnet": "218.1.0.0"
       }
     ],
     "final": "proxyDns",
@@ -301,6 +304,11 @@
         "action": "hijack-dns"
       },
       {
+        "ip_is_private": true,
+        "action": "route",
+        "outbound": "🚀 国内直达"
+      },
+      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -410,11 +418,6 @@
         "rule_set":"telegram_asn",
         "action": "route",
         "outbound":"📟 Telegram"
-      },
-      {
-        "ip_is_private": true,
-        "action": "route",
-        "outbound": "🚀 国内直达"
       },
       {
         "rule_set":["apple_services"],
