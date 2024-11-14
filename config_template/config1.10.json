@@ -21,7 +21,7 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://1.1.1.1",
+        "address": "https://1.1.1.1/dns-query",
         "address_resolver": "localDns",
         "client_subnet": "218.1.0.0",
         "detour": "🌏 国际代理"
