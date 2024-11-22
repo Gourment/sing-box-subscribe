@@ -33,6 +33,10 @@
     ],
     "rules": [
       {
+        "outbound": "any",
+        "server": "localDns"
+      },
+      {
         "clash_mode": "Direct",
         "action": "route",
         "server": "localDns"
