@@ -57,13 +57,29 @@
       {
         "rule_set": "geolocation-!cn",
         "server": "proxyDns"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "proxyDns",
+        "action": "route",
+        "client_subnet": "218.1.0.0"
       }
     ],
     "final": "proxyDns",
     "reverse_mapping": true,
     "disable_cache": false,
     "disable_expire": false,
-    "strategy": "ipv4_only"
+    "strategy": "prefer_ipv6"
   },    
   "inbounds": [
     {
@@ -297,6 +313,26 @@
       {
         "protocol": "dns",
         "action": "hijack-dns"
+      },
+      {
+        "inbound": "mixed-in",
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "inbound": "mixed-in",
+        "action": "sniff",
+        "timeout": "1s"
+      },
+      {
+        "inbound": "tun-in",
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "inbound": "tun-in",
+        "action": "sniff",
+        "timeout": "1s"
       },
       {
         "ip_is_private": true,
