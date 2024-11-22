@@ -56,6 +56,22 @@
       {
         "rule_set": "geolocation-!cn",
         "server": "proxyDns"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "proxyDns",
+        "action": "route",
+        "client_subnet": "218.1.0.0"
       }
     ],
     "final": "proxyDns",
@@ -326,19 +342,6 @@
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "port": 853
-          },
-          {
-            "network": "udp",
-            "port": 443
-          },
-          {
-            "protocol": "stun"
-          }
-        ],
-        "action": "reject"
-      },
       {
         "domain": [
           "clash.razord.top",
