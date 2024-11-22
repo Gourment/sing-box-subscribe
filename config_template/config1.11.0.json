@@ -38,12 +38,10 @@
       },
       {
         "clash_mode": "Direct",
-        "action": "route",
         "server": "localDns"
       },
       {
         "clash_mode": "Global",
-        "action": "route",
         "server": "proxyDns"
       },
       {
