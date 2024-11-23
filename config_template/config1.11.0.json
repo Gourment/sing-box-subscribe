@@ -300,6 +300,11 @@
     "rules": [
       {
         "inbound": "tun-in",
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "inbound": "tun-in",
         "action": "sniff"
       },
       {
