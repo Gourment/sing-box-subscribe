@@ -96,12 +96,6 @@
           "server_port": 2280
         }
       }
-    },
-    {
-      "tag": "dns-in",
-      "type": "direct",
-      "listen": "::",
-      "listen_port": 53
     }
   ],
   "outbounds": [
