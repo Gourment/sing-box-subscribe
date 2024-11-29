@@ -79,6 +79,14 @@
   },    
   "inbounds": [
     {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 20812,
+      "sniff": true,
+      "users": []
+    },
+    {
       "type": "tun",
       "tag": "tun-in",
       "address": [
@@ -93,7 +101,7 @@
         "http_proxy": {
           "enabled": true,
           "server": "0.0.0.0",
-          "server_port": 2280
+          "server_port": 20812
         }
       }
     }
@@ -299,12 +307,12 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "inbound": "tun-in",
+        "inbound": "mixed-in",
         "action": "resolve",
         "strategy": "prefer_ipv4"
       },
       {
-        "inbound": "tun-in",
+        "inbound": "mixed-in",
         "action": "sniff"
       },
       {
