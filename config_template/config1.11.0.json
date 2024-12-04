@@ -490,21 +490,21 @@
         "type": "remote",
         "tag": "microsoft",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-microsoft.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-microsoft.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "type": "remote",
         "tag": "onedrive",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-onedrive.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-onedrive.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "type": "remote",
         "tag": "github",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-github.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-github.srs",
         "download_detour": "🚀 国内直达"
       },
       {
@@ -567,21 +567,21 @@
         "type": "remote",
         "tag": "tiktok",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-tiktok.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "type": "remote",
         "tag": "geosite-line",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-line.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-line.srs",
         "download_detour": "🚀 国内直达"
       },
       {
         "type": "remote",
         "tag": "speedtest",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@raw/refs/heads/rule-set/geosite-speedtest.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
         "download_detour": "🚀 国内直达"
       },
       {
