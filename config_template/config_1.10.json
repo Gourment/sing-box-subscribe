@@ -76,33 +76,52 @@
   },    
   "inbounds": [
     {
-      "type": "tun",
-      "tag": "tun-in",
+      "domain_strategy": "prefer_ipv4",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tag": "mixed-in",
+      "type": "mixed",
+      "users": []
+    },
+    {
+      "tag": "tun",
       "type": "tun",
       "address": [
         "172.19.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
-      "mtu": 9000,
+      "route_address": [
+        "0.0.0.0/1",
+        "128.0.0.0/1",
+        "::/1",
+        "8000::/1"
+      ],
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ],
+      "stack": "system",
       "auto_route": true,
       "strict_route": true,
       "sniff": true,
-      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
+          "server": "0.0.0.0",
+          "server_port": 1082
         }
       }
     },
     {
+      "tag": "mixed",
       "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 2080,
-      "sniff": true,
-      "users": []
+      "listen": "0.0.0.0",
+      "listen_port": 1082,
+      "sniff": true
     }
+
   ],
   "outbounds": [
     {
@@ -326,6 +345,30 @@
         "outbound": "dns-out"
       },
       {
+        "protocol": "bittorrent",
+        "outbound": "🎯 直连"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "port": 58863
+          },
+          {
+            "source_ip_cidr": [
+              "192.168.2.7",
+              "2408:820c:a93c:53a0:42:c0ff:fea8:207"
+            ]
+          }
+        ],
+        "outbound": "🎯 直连"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🚀 国内直达"
+      },
+      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -416,10 +459,6 @@
       {
         "rule_set":"telegram_asn",
         "outbound":"📟 Telegram"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "🚀 国内直达"
       },
       {
         "rule_set":["apple_services"],
