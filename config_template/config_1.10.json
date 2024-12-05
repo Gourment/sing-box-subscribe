@@ -8,12 +8,9 @@
       "enabled": true
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "🎯 直连",
-      "secret": "",
-      "default_mode": "Rule"
+      "external_ui": "/etc/neko/ui/",
+      "external_controller": "0.0.0.0:9090",
+      "secret": "Akun"
     }
   },
   "dns": {
@@ -72,45 +69,29 @@
   },    
   "inbounds": [
     {
-      "domain_strategy": "prefer_ipv4",
-      "listen": "127.0.0.1",
-      "listen_port": 2334,
-      "sniff": true,
-      "sniff_override_destination": true,
-      "tag": "mixed-in",
-      "type": "mixed",
-      "users": []
-    },
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
-      "route_address": [
-        "0.0.0.0/1",
-        "128.0.0.0/1",
-        "::/1",
-        "8000::/1"
-      ],
-      "route_exclude_address": [
-        "192.168.2.7/32",
-        "2408:820c:a93c:53a0:42:c0ff:fea8:207/128",
-        "fd0d:7eb5:2aff::2/128"
-      ],
-      "stack": "system",
-      "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 1082
+        "tag": "tun-in",
+        "type": "tun",
+        "address": [
+          "172.19.0.0/30",
+          "fdfe:dcba:9876::0/126"
+        ],
+        "stack": "system",
+        "auto_route": true,
+        "strict_route": true,
+        "platform": {
+          "http_proxy": {
+            "enabled": true,
+            "server": "127.0.0.1",
+            "server_port": 7890
+          }
         }
+      },
+      {
+        "tag": "mixed-in",
+        "type": "mixed",
+        "listen": "127.0.0.1",
+        "listen_port": 7890
       }
-    }
   ],
   "outbounds": [
     {
