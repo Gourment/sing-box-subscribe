@@ -480,7 +480,7 @@
     }
   ],
   "route": {
-    "final": "♾️ Others",
+    "final": "🎯 直连",
     "override_android_vpn": true,
     "auto_detect_interface": true,
     "rules": [
