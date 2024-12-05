@@ -5,8 +5,7 @@
   },
   "experimental": {
     "cache_file": {
-      "enabled": true,
-      "store_fakeip": false
+      "enabled": true
     },
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
@@ -21,12 +20,13 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://1.1.1.1",
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "localDns",
         "detour": "🌏 国际代理"
       },
       {
         "tag": "localDns",
-        "address": "https://223.5.5.5/dns-query",
+        "address": "local",
         "detour": "🎯 直连"
       }
     ],
@@ -367,6 +367,23 @@
         "outbound": "dns-out"
       },
       {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "outbound": "🚫 拦截"
+      },
+      {
         "protocol": "bittorrent",
         "outbound": "🎯 直连"
       },
@@ -379,9 +396,9 @@
           },
           {
             "source_ip_cidr": [
-              "192.168.2.7",
-              "2408:820c:a93c:53a0:42:c0ff:fea8:207",
-              "fd0d:7eb5:2aff::2"
+              "192.168.2.7/32",
+              "2408:820c:a93c:53a0:42:c0ff:fea8:207/128",
+              "fd0d:7eb5:2aff::2/128"
             ]
           }
         ],
@@ -488,7 +505,7 @@
         "outbound":"📟 Telegram"
       },
       {
-        "rule_set":["apple_services"],
+        "rule_set":"apple_services",
         "outbound":"🍎 Apple"
       },
       {
