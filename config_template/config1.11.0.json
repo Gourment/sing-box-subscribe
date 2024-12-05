@@ -29,8 +29,17 @@
         "tag": "localDns",
         "address": "udp://223.5.5.5",
         "detour": "🎯 直连"
+      },
+      {
+        "tag": "fakeip",
+        "address": "fakeip"
       }
     ],
+    "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      },
     "rules": [
       {
         "outbound": "any",
@@ -43,6 +52,14 @@
       {
         "clash_mode": "Global",
         "server": "proxyDns"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "fakeip"
       },
       {
         "rule_set": [
@@ -65,46 +82,43 @@
         ],
         "server": "proxyDns",
         "client_subnet": "114.114.114.114/24"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
-    "final": "proxyDns",
+    "final": "localDns",
     "reverse_mapping": true,
-    "disable_cache": false,
-    "disable_expire": false,
     "strategy": "prefer_ipv4"
   },    
   "inbounds": [
     {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 20812,
-      "sniff": true,
-      "users": []
-    },
-    {
-      "type": "tun",
       "tag": "tun-in",
+      "type": "tun",
       "address": [
         "172.19.0.0/30",
-        "fdfe:dcba:9876::1/126"
+        "fdfe:dcba:9876::0/126"
       ],
-      "route_exclude_address": [
-        "192.168.2.7/32",
-        "2408:820c:a93c:53a0:42:c0ff:fea8:207/128",
-        "fd0d:7eb5:2aff::2/128"
-      ],
-      "mtu": 9000,
+      "stack": "system",
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
           "server": "127.0.0.1",
-          "server_port": 20812
+          "server_port": 7890
         }
       }
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
     }
   ],
   "outbounds": [
