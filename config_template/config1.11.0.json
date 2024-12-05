@@ -303,12 +303,7 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "inbound": "mixed-in",
-        "action": "resolve",
-        "strategy": "prefer_ipv4"
-      },
-      {
-        "inbound": "mixed-in",
+        "inbound": "tun-in",
         "action": "sniff"
       },
       {
