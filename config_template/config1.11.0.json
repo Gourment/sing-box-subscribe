@@ -89,6 +89,11 @@
         "172.19.0.0/30",
         "fdfe:dcba:9876::1/126"
       ],
+      "route_exclude_address": [
+        "192.168.2.7",
+        "2408:820c:a93c:53a0:42:c0ff:fea8:207",
+        "fd0d:7eb5:2aff::2"
+      ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -241,6 +246,17 @@
       ]
     },
     {
+      "tag":"🛒 Amazon",
+      "type":"selector",
+      "outbounds":[
+        "🇺🇸 美国节点",
+        "🇸🇬 狮城节点",
+        "🇭🇰 香港节点",
+        "🇩🇪 德国节点",
+        "🇯🇵 日本节点"
+      ]
+    },
+    {
       "tag":"🥇 Speedtest",
       "type":"selector",
       "outbounds":["{all}"],
@@ -292,6 +308,28 @@
       "interval": "5m",
       "tolerance": 50
     },
+    { 
+      "tag":"🇯🇵 日本节点",
+      "type":"urltest",
+      "outbounds":["{all}"],
+      "filter": [
+        {"action": "include","keywords": ["日本"]}
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 50
+    },
+    { 
+      "tag":"🇩🇪 德国节点",
+      "type":"urltest",
+      "outbounds":["{all}"],
+      "filter": [
+        {"action": "include","keywords": ["德国"]}
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 50
+    },
     {
       "type": "direct",
       "tag": "🎯 直连"
@@ -303,17 +341,24 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "inbound": "tun-in",
+        "inbound": [
+          "tun-in", 
+          "mixed-in"
+        ],
         "action": "sniff"
       },
       {
-        "protocol": "dns",
+        "type": "logical",
+        "mode": "or",
+        "rules":[
+          {
+            "port":53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
         "action": "hijack-dns"
-      },
-      {
-        "ip_is_private": true,
-        "action": "route",
-        "outbound": "🚀 国内直达"
       },
       {
         "type": "logical",
@@ -340,6 +385,30 @@
           "d.metacubex.one"
         ],
         "action": "route",
+        "outbound": "🎯 直连"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "protocol": "bittorrent",
+        "outbound": "🎯 直连"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "port": 58863
+          },
+          {
+            "source_ip_cidr": [
+              "192.168.2.7",
+              "2408:820c:a93c:53a0:42:c0ff:fea8:207"
+            ]
+          }
+        ],
         "outbound": "🎯 直连"
       },
       {
@@ -419,6 +488,14 @@
         "outbound":"📱 Line"
       },
       {
+        "rule_set": "geosite-telegram",
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": "geosite-amazon",
+        "outbound": "Apple"
+      },
+      {
         "rule_set":"speedtest",
         "action": "route",
         "outbound":"🥇 Speedtest"
@@ -439,14 +516,14 @@
         "outbound": "🌏 国际代理"
       },
       {
-        "rule_set":"telegram_asn",
-        "action": "route",
-        "outbound":"📟 Telegram"
-      },
-      {
         "rule_set":["apple_services"],
         "action": "route",
         "outbound":"🍎 Apple"
+      },
+      {
+        "rule_set":"telegram_asn",
+        "action": "route",
+        "outbound":"📟 Telegram"
       },
       {
         "rule_set":"telegram-ip",
@@ -542,6 +619,20 @@
         "tag": "telegram_asn",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
+        "download_detour": "🚀 国内直达"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "🚀 国内直达"
+      },
+      {
+        "tag": "geosite-amazon",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
         "download_detour": "🚀 国内直达"
       },
       {
