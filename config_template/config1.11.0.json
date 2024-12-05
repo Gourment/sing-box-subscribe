@@ -90,9 +90,9 @@
         "fdfe:dcba:9876::1/126"
       ],
       "route_exclude_address": [
-        "192.168.2.7",
-        "2408:820c:a93c:53a0:42:c0ff:fea8:207",
-        "fd0d:7eb5:2aff::2"
+        "192.168.2.7/32",
+        "2408:820c:a93c:53a0:42:c0ff:fea8:207/128",
+        "fd0d:7eb5:2aff::2/128"
       ],
       "mtu": 9000,
       "auto_route": true,
