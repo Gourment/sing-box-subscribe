@@ -62,30 +62,26 @@
                 "server": "localDns"
             },
             {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "rule_set": "geosite-geolocation-!cn",
+                        "invert": true
+                    },
+                    {
+                        "rule_set": "geoip-cn"
+                    }
+                ],
+                "server": "google",
+                "client_subnet": "114.114.114.114/24"
+            },
+            {
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "rule_set": "geolocation-!cn",
-                "server": "fakeip",
-                "rewrite_ttl": 1
-            },
-            {
-                "fallback_rules": [
-                    {
-                        "rule_set": [
-                            "geoip-cn"
-                        ],
-                        "server": "dns_direct"
-                    },
-                    {
-                        "match_all": true,
-                        "server": "dns_fakeip",
-                        "rewrite_ttl": 1
-                    }
-                ],
-                "server": "dns_direct",
-                "allow_fallthrough": true
+                "server": "fakeip"
             }
         ],
         "final": "dns_proxy",
@@ -459,10 +455,10 @@
                 "action": "reject"
             },
             {
-              "wifi_ssid": [
-                "SSSS"
-              ],
-              "outbound": "🎯 直连"
+                "wifi_ssid": [
+                    "SSSS"
+                ],
+                "outbound": "🎯 直连"
             },
             {
                 "domain": [
@@ -750,22 +746,6 @@
                 "format": "binary",
                 "path": "./ruleset/speedtest.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
-                "download_detour": "🚀 国内直达"
-            },
-            {
-                "tag": "fakeip-filter",
-                "type": "remote",
-                "format": "binary",
-                "path": "./ruleset/fakeip-filter.srs",
-                "url": "https://ghproxy.cn/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter-lite.srs",
-                "download_detour": "🚀 国内直达"
-            },
-            {
-                "tag": "private",
-                "type": "remote",
-                "format": "binary",
-                "path": "./ruleset/private.srs",
-                "url": "https://ghproxy.cn/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/privateip.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
