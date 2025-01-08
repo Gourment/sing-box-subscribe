@@ -6,12 +6,12 @@
     "experimental": {
         "cache_file": {
             "enabled": true,
-            "store_fakeip": false
+            "store_fakeip": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
             "external_ui": "ui",
-            "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/download/v1.22.2/dist.zip",
+            "external_ui_download_url": "https://ghgo.xyz/https://github.com/DustinWin/proxy-tools/releases/download/Dashboard/zashboard.tar.gz",
             "external_ui_download_detour": "🎯 直连",
             "secret": "",
             "default_mode": "Rule"
