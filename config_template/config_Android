@@ -40,10 +40,6 @@
         ],
         "rules": [
             {
-                "outbound": "any",
-                "server": "localDns"
-            },
-            {
                 "clash_mode": "Direct",
                 "server": "localDns"
             },
@@ -409,13 +405,16 @@
         }
     ],
     "route": {
+        "default_domain_resolver": {
+            "server": "localDns"
+        },
         "final": "♾️ Others",
         "override_android_vpn": true,
         "auto_detect_interface": true,
         "rules": [
             {
                 "wifi_ssid": [
-                    "SSSSS"
+                    "SSSS"
                 ],
                 "outbound": "🎯 直连"
             },
