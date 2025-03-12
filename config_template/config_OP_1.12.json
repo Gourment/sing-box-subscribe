@@ -566,8 +566,7 @@
             },
             {
                 "rule_set": "private",
-                "outbound": "🎯 直连",
-                "skip_resolve": true
+                "outbound": "🎯 直连"
             },
             {
                 "rule_set": "apple_services",
