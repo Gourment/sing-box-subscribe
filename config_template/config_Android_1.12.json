@@ -83,29 +83,6 @@
         "independent_cache": true,
         "reverse_mapping": true
     },
-    "endpoints": [
-        {
-            "type": "wireguard",
-            "tag": "wg",
-            "system": false,
-            "name": "WireGuard",
-            "mtu": 1408,
-            "address": ["180.180.0.1/32"],
-            "private_key": "cPsjiPFxyYE8BB756Au3velvWgLif6wv3LC6lNlrrG4=",
-            "listen_port": 58863,
-            "peers": [
-              {
-                "address": "180.180.0.2",
-                "port": 51820,
-                "public_key": "0HP7c7znbTKiU2VlPITCetKCxtC5U2kLNDfg20eN7GY=",
-                "pre_shared_key": "mjZqWPOj+tiWDE4xuMbpkavyLlQ//rmni/Au7V/2tdo=",
-                "allowed_ips": ["0.0.0.0/0"],
-                "persistent_keepalive_interval": 25,
-                "reserved": [0, 0, 0]
-              }
-            ]
-        }
-    ],
     "inbounds": [
         {
             "tag": "tun-in",
