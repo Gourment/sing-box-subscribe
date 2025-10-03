@@ -445,7 +445,8 @@
                 "inbound": [
                     "tun-in",
                     "tproxy-in",
-                    "mixed-in"
+                    "mixed-in"，
+                    "redirect-in"
                 ],
                 "action": "sniff"
             },
