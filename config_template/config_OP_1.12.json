@@ -11,7 +11,7 @@
         "clash_api": {
             "external_controller": "0.0.0.0:9999",
             "external_ui": "ui",
-            "external_ui_download_url": "https://gh-proxy.net/github.com/DustinWin/proxy-tools/releases/download/Dashboard/zashboard.tar.gz",
+            "external_ui_download_url": "https://gh.llkk.cc/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-misans-only.zip",
             "external_ui_download_detour": "🎯 直连",
             "secret": "",
             "default_mode": "Rule"
@@ -23,7 +23,7 @@
                 "tag": "proxyDns",
                 "type": "https",
                 "server": "1.1.1.1",
-                "detour": "🌏 国际代理"
+                "detour": "🌏 全球冲浪"
             },
             {
                 "tag": "localDns",
@@ -205,7 +205,7 @@
         },
         {
             "tag": "🏴‍☠️ 欧洲自选",
-            "type": "select",
+            "type": "selector",
             "outbounds": [
                 "{all}"
             ],
@@ -221,14 +221,11 @@
                         "澳大利亚"
                     ]
                 }
-            ],
-            "url": "http://cp.cloudflare.com/generate_204",
-            "interval": "5m",
-            "tolerance": 50
+            ]
         },
         {
             "tag": "🌏 东盟自选",
-            "type": "select",
+            "type": "selector",
             "outbounds": [
                 "{all}"
             ],
@@ -242,14 +239,11 @@
                         "马来西亚"
                     ]
                 }
-            ],
-            "url": "http://cp.cloudflare.com/generate_204",
-            "interval": "5m",
-            "tolerance": 50
+            ]
         },
         {
             "tag": "🌀 冷门自选",
-            "type": "select",
+            "type": "selector",
             "outbounds": [
                 "{all}"
             ],
@@ -263,10 +257,7 @@
                         "尼日利亚"
                     ]
                 }
-            ],
-            "url": "http://cp.cloudflare.com/generate_204",
-            "interval": "5m",
-            "tolerance": 50
+            ]
         },
         {
             "tag": "🕹 全球自选",
@@ -311,7 +302,7 @@
             "outbounds": [
                 "🇺🇸 美国节点",
                 "🇭🇰 香港节点",
-                "🌏 国际代理"
+                "🌏 全球冲浪"
             ]
         },
         {
@@ -380,7 +371,7 @@
             "tag": "🍎 Apple",
             "type": "selector",
             "outbounds": [
-                "🎯 直连",
+                "🚀 国内直达",
                 "🇭🇰 香港节点",
                 "🇺🇸 美国节点"
             ]
@@ -389,7 +380,7 @@
             "tag": "🪟 Microsoft",
             "type": "selector",
             "outbounds": [
-                "🎯 直连",
+                "🚀 国内直达",
                 "🇭🇰 香港节点",
                 "🇺🇸 美国节点"
             ]
@@ -615,7 +606,12 @@
             },
             {
                 "clash_mode": "Global",
-                "outbound": "🌏 国际代理"
+                "outbound": "🌏 全球冲浪"
+            },
+            {
+                "rule_set": "chinadomain",
+                "action": "route",
+                "outbound": "🚀 国内直达"
             },
             {
                 "clash_mode": "LocationDKS",
@@ -689,11 +685,6 @@
                 "outbound": "🥇 Speedtest"
             },
             {
-                "rule_set": "chinadomain",
-                "action": "route",
-                "outbound": "🚀 国内直达"
-            },
-            {
                 "rule_set": "geosite-cn",
                 "action": "route",
                 "outbound": "🚀 国内直达"
@@ -701,7 +692,7 @@
             {
                 "rule_set": "geolocation-!cn",
                 "action": "route",
-                "outbound": "🌏 国际代理"
+                "outbound": "🌏 全球冲浪"
             },
             {
                 "rule_set": "geosite-private",
@@ -733,7 +724,6 @@
                 "tag": "geoip-cn",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/geoip-cn.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -741,7 +731,6 @@
                 "tag": "geosite-cn",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/geosite-cn.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -749,7 +738,6 @@
                 "tag": "geolocation-!cn",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/geolocation-!cn.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -757,14 +745,12 @@
                 "tag": "geosite-private",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/private.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
             },
             {
                 "tag": "microsoft",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/microsoft.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-microsoft.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -772,7 +758,6 @@
                 "tag": "onedrive",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/onedrive.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-onedrive.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -780,7 +765,6 @@
                 "tag": "github",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/github.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-github.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -788,7 +772,6 @@
                 "tag": "youtube",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/youtube.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -796,7 +779,6 @@
                 "tag": "geosite-google",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/geosite-google.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-google.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -804,7 +786,6 @@
                 "tag": "telegram",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/telegram.json",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -812,7 +793,6 @@
                 "tag": "telegram-ip",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/telegram-ip.json",
                 "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -820,7 +800,6 @@
                 "tag": "telegram_asn",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/telegram_asn.json",
                 "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -828,15 +807,13 @@
                 "tag": "geosite-amazon",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/geosite-amazon.srs",
-                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+                "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "apple_cdn",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/apple_cdn.json",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -844,7 +821,6 @@
                 "tag": "apple_services",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/apple_services.json",
                 "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -852,7 +828,6 @@
                 "tag": "tiktok",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/tiktok.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -860,7 +835,6 @@
                 "tag": "speedtest",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/speedtest.srs",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
                 "download_detour": "🚀 国内直达"
             },
@@ -868,7 +842,6 @@
                 "tag": "chinadomain",
                 "type": "remote",
                 "format": "source",
-                "path": "./ruleset/chinadomain.json",
                 "url": "https://testingcf.jsdelivr.net/gh/Gourment/PrivateClashRules@main/Chinadomain.json",
                 "download_detour": "🚀 国内直达"
             },
@@ -876,24 +849,21 @@
                 "tag": "SocialMedia",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/SocialMedia.srs",
-                "url": "https://cdn.jsdelivr.net/gh/666OS/rules@refs/heads/release/singbox/domain/SocialMedia.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "LocationDKS",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/LocationDKS.srs",
-                "url": "https://cdn.jsdelivr.net/gh/666OS/rules@refs/heads/release/singbox/domain/LocationDKS.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "AI",
                 "type": "remote",
                 "format": "binary",
-                "path": "./ruleset/openai.srs",
-                "url": "https://cdn.jsdelivr.net/gh/666OS/rules@refs/heads/release/singbox/domain/AI.json",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
                 "download_detour": "🚀 国内直达"
             }
         ]
