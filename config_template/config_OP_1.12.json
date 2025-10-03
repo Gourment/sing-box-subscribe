@@ -27,13 +27,8 @@
             },
             {
                 "tag": "localDns",
-                "type": "local"
-            },
-            {
-                "tag": "Meizu",
-                "type": "udp",
-                "server": "223.5.5.5",
-                "detour": "🎯 直连"
+                "type": "tls",
+                "server": "223.5.5.5"
             },
             {
                 "type": "fakeip",
@@ -51,10 +46,10 @@
                   "rule_set": "geosite-cn"
                   },
                   {
-                  "source_ip_cidr": "192.168.2.175"
+                  "source_ip_cidr": "192.168.2.230"
                   }
                 ],
-                "server": "Meizu",
+                "server": "localDns",
                 "strategy": "ipv4_only"
             },
             {
@@ -96,11 +91,54 @@
                 "server": "fakeip"
             }
         ],
-        "final": "proxyDns",
         "strategy": "prefer_ipv4",
-        "independent_cache": true,
-        "reverse_mapping": true
+        "independent_cache": true
     },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
+      "stack": "mixed",
+      "auto_route": true,
+      "auto_redirect":true,
+      "strict_route": true,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "::",
+      "listen_port": 1053
+    },
+    {
+      "type": "redirect",
+      "tag": "redirect-in",
+      "listen": "::",
+      "listen_port": 7892
+    },
+    {
+      "type": "tproxy",
+      "tag": "tproxy-in",
+      "listen": "::",
+      "listen_port": 7893
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
     "outbounds": [
         {
             "tag": "♾️ Others",
@@ -521,17 +559,7 @@
                 "outbound": "🎵 TikTok"
             },
             {
-                "package_name": "com.zhiliaoapp.musically",
-                "action": "route",
-                "outbound": "🎵 TikTok"
-            },
-            {
                 "rule_set": "geosite-line",
-                "action": "route",
-                "outbound": "📱 Line"
-            },
-            {
-                "package_name": "jp.naver.line.android",
                 "action": "route",
                 "outbound": "📱 Line"
             },
