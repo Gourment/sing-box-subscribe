@@ -615,7 +615,7 @@
                 "outbound": "🚀 国内直达"
             },
             {
-                "clash_mode": "LocationDKS",
+                 "rule_set": "LocationDKS",
                 "outbound": "📍 抖快书定位"
             },
             {
