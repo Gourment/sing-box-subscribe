@@ -14,7 +14,7 @@
             "external_ui": "ui",
             "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-misans-only.zip",
             "external_ui_download_detour": "🎯 直连",
-            "secret": "yyds999",
+            "secret": "",
             "default_mode": "Rule"
         }
     },
@@ -383,19 +383,16 @@
             "tag": "🥇 Speedtest",
             "type": "selector",
             "outbounds": [
-                "{all}"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "香港",
-                        "新加坡",
-                        "美国",
-                        "台湾",
-                        "日本"
-                    ]
-                }
+                "🚀 国内直达",
+                "🇺🇸 美国节点",
+                "🇸🇬 狮城节点",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇯🇵 日本节点",
+                "🇰🇷 韩国节点",
+                "🏴‍☠️ 欧洲自选",
+                "🌏 东盟自选",
+                "🌀 冷门自选"
             ]
         },
         {
@@ -596,10 +593,10 @@
             {
                 "package_name": "jp.naver.line.android",
                 "action": "route",
-                "outbound": "📱 Line"
+                "outbound": "📱 海外社媒"
             },
             {
-                "rule_set": "LocationDKS",
+                "clash_mode": "LocationDKS",
                 "outbound": "📍 抖快书定位"
             },
             {
