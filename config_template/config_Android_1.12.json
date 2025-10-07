@@ -82,21 +82,6 @@
         "rules": [
             {
                 "action": "route",
-                "type": "logical",
-                "mode": "and",
-                "rules": [
-                    {
-                        "rule_set": "GeoSite-CN"
-                    },
-                    {
-                        "source_ip_cidr": "192.168.2.230"
-                    }
-                ],
-                "server": "Local-DNS",
-                "strategy": "ipv4_only"
-            },
-            {
-                "action": "route",
                 "clash_mode": "Direct",
                 "server": "Local-DNS"
             },
