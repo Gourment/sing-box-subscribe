@@ -53,42 +53,32 @@
     "dns": {
         "servers": [
             {
-                "tag": "fake-ip-dns-server",
-                "type": "fakeip"
-            },
-            {
-                "tag": "Local-DNS",
-                "type": "https",
-                "domain_resolver": "Local-DNS-Resolver",
-                "server_port": 443,
-                "server": "223.5.5.5",
-                "path": "/dns-query"
-            },
-            {
-                "tag": "Local-DNS-Resolver",
-                "type": "udp",
-                "server_port": 53,
+                "tag": "local",
+                "type": "tls",
                 "server": "223.5.5.5"
             },
             {
-                "tag": "Remote-DNS",
+                "tag": "google",
                 "type": "tls",
-                "detour": "🌏 全球冲浪",
-                "domain_resolver": "Local-DNS-Resolver",
-                "server_port": 853,
                 "server": "8.8.8.8"
+            },
+            {
+                "tag": "fake-ip-dns-server",
+                "type": "fakeip",
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18"
             }
         ],
         "rules": [
             {
                 "action": "route",
                 "clash_mode": "Direct",
-                "server": "Local-DNS"
+                "server": "local"
             },
             {
                 "action": "route",
                 "clash_mode": "Global",
-                "server": "Remote-DNS"
+                "server": "google"
             },
             {
                 "action": "route",
@@ -100,7 +90,7 @@
                     "A",
                     "AAAA"
                 ],
-                "server": "Local-DNS"
+                "server": "local"
             },
             {
                 "action": "route",
@@ -124,14 +114,14 @@
                     }
                 ],
                 "client_subnet": "114.114.114.114/24",
-                "server": "Remote-DNS"
+                "server": "google"
             },
             {
                 "action": "route",
                 "rule_set": [
                     "GeoLocation-!CN"
                 ],
-                "server": "Remote-DNS"
+                "server": "google"
             },
             {
                 "action": "route",
@@ -166,7 +156,7 @@
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
-        "final": "Remote-DNS",
+        "final": "google",
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
@@ -827,7 +817,7 @@
                 "tag": "GeoLocation-!CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/GeoLocation-!CN.srs",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
