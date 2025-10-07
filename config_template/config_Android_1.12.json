@@ -18,68 +18,171 @@
             "default_mode": "Rule"
         }
     },
+    "endpoints": [
+        {
+            "type": "wireguard",
+            "tag": "wg-ep",
+            "system": false,
+            "name": "",
+            "mtu": 1408,
+            "address": [
+                "192.168.10.10/32"
+            ],
+            "private_key": "UBwrwC0KViR4W2o/tmq0DJNSR2jIrcxY5Fs/sPPp3Gg=",
+            "listen_port": 10000,
+            "peers": [
+                {
+                    "address": "139.226.191.76",
+                    "port": 57907,
+                    "public_key": "yB0onPAZM8h2WCDZTiUk2YQZrWNFvYgWLbcfz+J3aBI=",
+                    "pre_shared_key": "+tfP+ULsF9T6MtwzizTkBjT5HimiL8BRFMoSPWA0Ue0=",
+                    "allowed_ips": [
+                        "192.168.2.0/24",
+                        "192.168.10.0/24"
+                    ],
+                    "persistent_keepalive_interval": 25,
+                    "reserved": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        }
+    ],
     "dns": {
         "servers": [
             {
-                "tag": "proxyDns",
-                "type": "https",
-                "server": "1.1.1.1",
-                "detour": "🌏 全球冲浪"
+                "tag": "fake-ip-dns-server",
+                "type": "fakeip"
             },
             {
-                "tag": "localDns",
+                "tag": "Local-DNS",
                 "type": "https",
+                "domain_resolver": "Local-DNS-Resolver",
+                "server_port": 443,
+                "server": "223.5.5.5",
+                "path": "/dns-query"
+            },
+            {
+                "tag": "Local-DNS-Resolver",
+                "type": "udp",
+                "server_port": 53,
                 "server": "223.5.5.5"
             },
             {
-                "type": "fakeip",
-                "tag": "fakeip",
-                "inet4_range": "198.18.0.0/15",
-                "inet6_range": "fc00::/18"
+                "tag": "Remote-DNS",
+                "type": "tls",
+                "detour": "🌏 全球冲浪",
+                "domain_resolver": "Local-DNS-Resolver",
+                "server_port": 853,
+                "server": "8.8.8.8"
             }
         ],
         "rules": [
             {
-                "clash_mode": "Direct",
-                "server": "localDns"
-            },
-            {
-                "clash_mode": "Global",
-                "server": "proxyDns"
-            },
-            {
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "rule_set": "geosite-cn",
-                "server": "localDns"
-            },
-            {
+                "action": "route",
                 "type": "logical",
                 "mode": "and",
                 "rules": [
                     {
-                        "rule_set": "geolocation-!cn",
-                        "invert": true
+                        "rule_set": "GeoSite-CN"
                     },
                     {
-                        "rule_set": "geoip-cn"
+                        "source_ip_cidr": "192.168.2.230"
                     }
                 ],
-                "server": "proxyDns",
-                "client_subnet": "114.114.114.114/24"
+                "server": "Local-DNS",
+                "strategy": "ipv4_only"
             },
             {
+                "action": "route",
+                "clash_mode": "Direct",
+                "server": "Local-DNS"
+            },
+            {
+                "action": "route",
+                "clash_mode": "Global",
+                "server": "Remote-DNS"
+            },
+            {
+                "action": "route",
+                "rule_set": [
+                    "GeoSite-CN",
+                    "ChinaDomain"
+                ],
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "server": "fakeip"
+                "server": "Local-DNS"
+            },
+            {
+                "action": "route",
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "rule_set": "GeoLocation-!CN",
+                        "invert": true,
+                        "query_type": [
+                            "A",
+                            "AAAA"
+                        ]
+                    },
+                    {
+                        "rule_set": "GeoSite-CN",
+                        "query_type": [
+                            "A",
+                            "AAAA"
+                        ]
+                    }
+                ],
+                "client_subnet": "114.114.114.114/24",
+                "server": "Remote-DNS"
+            },
+            {
+                "action": "route",
+                "rule_set": [
+                    "GeoLocation-!CN"
+                ],
+                "server": "Remote-DNS"
+            },
+            {
+                "action": "route",
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "domain_suffix": [
+                            ".lan",
+                            ".localdomain",
+                            ".example",
+                            ".invalid",
+                            ".localhost",
+                            ".test",
+                            ".local",
+                            ".home.arpa",
+                            ".msftconnecttest.com",
+                            ".msftncsi.com"
+                        ],
+                        "invert": true
+                    },
+                    {
+                        "query_type": [
+                            "A",
+                            "AAAA"
+                        ]
+                    }
+                ],
+                "server": "fake-ip-dns-server"
             }
         ],
-        "strategy": "prefer_ipv4",
-        "independent_cache": true
+        "disable_cache": false,
+        "disable_expire": false,
+        "independent_cache": true,
+        "final": "Remote-DNS",
+        "strategy": "prefer_ipv4"
     },
     "inbounds": [
         {
@@ -380,7 +483,7 @@
             ]
         },
         {
-            "tag": "🥇 Speedtest",
+            "tag": "🥇 SpeedTest",
             "type": "selector",
             "outbounds": [
                 "🚀 国内直达",
@@ -510,7 +613,7 @@
     ],
     "route": {
         "default_domain_resolver": {
-            "server": "localDns"
+            "server": "Local-DNS"
         },
         "final": "♾️ Others",
         "override_android_vpn": true,
@@ -560,6 +663,16 @@
                 "action": "reject"
             },
             {
+                "action": "route",
+                "ip_cidr": "192.168.2.0/24",
+                "outbound": "wg-ep"
+            },
+            {
+                "action": "route",
+                "ip_cidr": "192.168.10.0/24",
+                "outbound": "wg-ep"
+            },
+            {
                 "domain": [
                     "clash.razord.top",
                     "yacd.metacubex.one",
@@ -575,6 +688,10 @@
             },
             {
                 "protocol": "bittorrent",
+                "outbound": "🎯 直连"
+            },
+            {
+                "port": 123,
                 "outbound": "🎯 直连"
             },
             {
@@ -596,7 +713,7 @@
                 "outbound": "📱 海外社媒"
             },
             {
-                 "rule_set": "LocationDKS",
+                "rule_set": "LocationDKS",
                 "outbound": "📍 抖快书定位"
             },
             {
@@ -608,12 +725,12 @@
                 "outbound": "🔰 WeChat"
             },
             {
-                "rule_set": "onedrive",
+                "rule_set": "OneDrive",
                 "action": "route",
                 "outbound": "☁️ 云服务"
             },
             {
-                "rule_set": "github",
+                "rule_set": "GitHub",
                 "action": "route",
                 "outbound": "🤖 人工智障"
             },
@@ -628,205 +745,205 @@
                 "outbound": "📱 海外社媒"
             },
             {
-                "rule_set": "youtube",
+                "rule_set": "YouTube",
                 "action": "route",
                 "outbound": "🧿 YouTube"
             },
             {
-                "rule_set": "geosite-google",
+                "rule_set": "Geosite-Google",
                 "action": "route",
                 "outbound": "📲 谷歌服务"
             },
             {
-                "rule_set": "telegram",
+                "rule_set": "Telegram",
                 "action": "route",
                 "outbound": "📟 Telegram"
             },
             {
-                "rule_set": "apple_cdn",
+                "rule_set": "AppleCDN",
                 "action": "route",
                 "outbound": "🍎 Apple"
             },
             {
-                "rule_set": "microsoft",
+                "rule_set": "Microsoft",
                 "action": "route",
                 "outbound": "🪟 Microsoft"
             },
             {
-                "rule_set": "tiktok",
+                "rule_set": "TikTok",
                 "action": "route",
                 "outbound": "🎵 TikTok"
             },
             {
-                "rule_set": "geosite-amazon",
+                "rule_set": "Geosite-Amazon",
                 "outbound": "🛒 Amazon"
             },
             {
-                "rule_set": "speedtest",
+                "rule_set": "SpeedTest",
                 "action": "route",
-                "outbound": "🥇 Speedtest"
+                "outbound": "🥇 SpeedTest"
             },
             {
-                "rule_set": "chinadomain",
-                "action": "route",
-                "outbound": "🚀 国内直达"
-            },
-            {
-                "rule_set": "geosite-cn",
+                "rule_set": "ChinaDomain",
                 "action": "route",
                 "outbound": "🚀 国内直达"
             },
             {
-                "rule_set": "geolocation-!cn",
+                "rule_set": "GeoSite-CN",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
+                "rule_set": "GeoLocation-!CN",
                 "action": "route",
                 "outbound": "🌏 全球冲浪"
             },
             {
-                "rule_set": "geosite-private",
+                "rule_set": "Geosite-Private",
                 "outbound": "🎯 直连"
             },
             {
-                "rule_set": "telegram_asn",
+                "rule_set": "Telegram-ASN",
                 "action": "route",
                 "outbound": "📟 Telegram"
             },
             {
-                "rule_set": "apple_services",
+                "rule_set": "AppleServices",
                 "action": "route",
                 "outbound": "🍎 Apple"
             },
             {
-                "rule_set": "telegram-ip",
+                "rule_set": "Telegram-IP",
                 "action": "route",
                 "outbound": "📟 Telegram"
             },
             {
-                "rule_set": "geoip-cn",
+                "rule_set": "Geoip-CN",
                 "action": "route",
                 "outbound": "🚀 国内直达"
             }
         ],
         "rule_set": [
             {
-                "tag": "geoip-cn",
+                "tag": "Geoip-CN",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "geosite-cn",
+                "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "geolocation-!cn",
+                "tag": "GeoLocation-!CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/GeoLocation-!CN.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "geosite-private",
+                "tag": "Geosite-Private",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
             },
             {
-                "tag": "microsoft",
+                "tag": "Microsoft",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-microsoft.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "onedrive",
+                "tag": "OneDrive",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-onedrive.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "github",
+                "tag": "GitHub",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-github.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "youtube",
+                "tag": "YouTube",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "geosite-google",
+                "tag": "Geosite-Google",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-google.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "telegram",
+                "tag": "Telegram",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "telegram-ip",
+                "tag": "Telegram-IP",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "telegram_asn",
+                "tag": "Telegram-ASN",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "geosite-amazon",
+                "tag": "Geosite-Amazon",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "apple_cdn",
+                "tag": "AppleCDN",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "apple_services",
+                "tag": "AppleServices",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "tiktok",
+                "tag": "TikTok",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "speedtest",
+                "tag": "SpeedTest",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "chinadomain",
+                "tag": "ChinaDomain",
                 "type": "remote",
                 "format": "source",
                 "url": "https://testingcf.jsdelivr.net/gh/Gourment/PrivateClashRules@main/Chinadomain.json",
