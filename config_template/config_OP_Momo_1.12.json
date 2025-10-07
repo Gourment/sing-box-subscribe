@@ -27,7 +27,7 @@
             },
             {
                 "tag": "local",
-                "type": "udp",
+                "type": "tls",
                 "server": "223.5.5.5"
             },
 
