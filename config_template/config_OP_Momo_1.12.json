@@ -21,7 +21,9 @@
         "servers": [
             {
                 "tag": "fake-ip-dns-server",
-                "type": "fakeip"
+                "type": "fakeip",
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18"
             },
             {
                 "tag": "local",
@@ -770,7 +772,7 @@
                 "tag": "GeoLocation-!CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/GeoLocation-!CN.srs",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
