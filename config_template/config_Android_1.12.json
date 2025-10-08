@@ -32,7 +32,7 @@
             "listen_port": 10000,
             "peers": [
                 {
-                    "address": "139.226.191.76",
+                    "address": "139.226.191.4",
                     "port": 57907,
                     "public_key": "yB0onPAZM8h2WCDZTiUk2YQZrWNFvYgWLbcfz+J3aBI=",
                     "pre_shared_key": "+tfP+ULsF9T6MtwzizTkBjT5HimiL8BRFMoSPWA0Ue0=",
@@ -53,15 +53,18 @@
     "dns": {
         "servers": [
             {
-                "tag": "google",
-                "type": "tls",
-                "detour":"🌏 全球冲浪",
-                "server": "8.8.8.8"
-            },
-            {
                 "tag": "local",
                 "type": "tls",
                 "server": "223.5.5.5"
+            },
+            {
+                "tag": "Local-DNS",
+                "type": "local"
+            },
+            {
+                "tag": "google",
+                "type": "tls",
+                "server": "8.8.8.8"
             },
             {
                 "tag": "fake-ip-dns-server",
@@ -80,6 +83,10 @@
                 "action": "route",
                 "clash_mode": "Global",
                 "server": "google"
+            },
+            {
+                "wifi_ssid": ["SSSS"],
+                "server": "Local-DNS"
             },
             {
                 "action": "route",
@@ -574,7 +581,7 @@
     ],
     "route": {
         "default_domain_resolver": {
-            "server": "local"
+            "server": "Local-DNS"
         },
         "final": "♾️ Others",
         "override_android_vpn": true,
