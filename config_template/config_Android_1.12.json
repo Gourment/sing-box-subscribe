@@ -77,7 +77,7 @@
             {
                 "action": "route",
                 "clash_mode": "Direct",
-                "server": "local"
+                "server": "aliDNS"
             },
             {
                 "action": "route",
