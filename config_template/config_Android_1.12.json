@@ -55,6 +55,8 @@
             {
                 "tag": "google",
                 "type": "tls",
+                "detour":"🌏 全球冲浪",
+                "server_port": 853,
                 "server": "8.8.8.8"
             },
             {
