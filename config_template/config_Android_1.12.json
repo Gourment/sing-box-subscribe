@@ -162,6 +162,9 @@
             ],
             "stack": "mixed",
             "auto_route": true,
+            "route_exclude_address": [
+              "192.168.2.186/32"
+            ],
             "strict_route": true,
             "platform": {
                 "http_proxy": {
