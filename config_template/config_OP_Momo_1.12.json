@@ -13,21 +13,21 @@
             "external_ui": "ui",
             "external_ui_download_url": "https://gh.llkk.cc/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-misans-only.zip",
             "external_ui_download_detour": "🎯 直连",
-            "secret": "",
+            "secret": "yyds999",
             "default_mode": "Rule"
         }
     },
     "dns": {
         "servers": [
             {
+                "tag": "remote",
+                "type": "tls",
+                "server": "1.1.1.1"
+            },
+            {
                 "tag": "google",
                 "type": "tls",
                 "server": "8.8.8.8"
-            },
-            {
-                "tag": "local",
-                "type": "tls",
-                "server": "223.5.5.5"
             },
             {
                 "tag": "fake-ip-dns-server",
@@ -37,21 +37,6 @@
             }
         ],
         "rules": [
-            {
-                "action": "route",
-                "type": "logical",
-                "mode": "and",
-                "rules": [
-                    {
-                        "rule_set": "GeoSite-CN"
-                    },
-                    {
-                        "source_ip_cidr": "192.168.2.230"
-                    }
-                ],
-                "server": "local",
-                "strategy": "ipv4_only"
-            },
             {
                 "action": "route",
                 "clash_mode": "Direct",
@@ -88,7 +73,7 @@
                     }
                 ],
                 "client_subnet": "114.114.114.114/24",
-                "server": "google"
+                "server": "remote"
             },
             {
                 "action": "route",
@@ -123,7 +108,7 @@
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
-        "final": "google",
+        "final": "remote",
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
