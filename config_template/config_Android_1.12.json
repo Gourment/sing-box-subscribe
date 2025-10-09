@@ -1,70 +1,35 @@
 {
     "log": {
-        "level": "info",
+        "level": "error",
+        "output": "/storage/emulated/0/documents/sing-box/debug.log",
         "timestamp": true
     },
     "experimental": {
         "cache_file": {
             "enabled": true,
+            "path": "/storage/emulated/0/documents/sing-box/cache.db",
             "store_fakeip": true,
             "store_rdrc": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "external_ui": "ui",
+            "external_ui": "/storage/emulated/0/documents/sing-box/ui",
             "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-misans-only.zip",
             "external_ui_download_detour": "🎯 直连",
             "secret": "yyds999",
             "default_mode": "Rule"
         }
     },
-    "endpoints": [
-        {
-            "type": "wireguard",
-            "tag": "wg-ep",
-            "system": false,
-            "name": "",
-            "mtu": 1408,
-            "address": [
-                "192.168.10.10/32"
-            ],
-            "private_key": "UBwrwC0KViR4W2o/tmq0DJNSR2jIrcxY5Fs/sPPp3Gg=",
-            "listen_port": 10000,
-            "peers": [
-                {
-                    "address": "139.226.191.4",
-                    "port": 57907,
-                    "public_key": "yB0onPAZM8h2WCDZTiUk2YQZrWNFvYgWLbcfz+J3aBI=",
-                    "pre_shared_key": "+tfP+ULsF9T6MtwzizTkBjT5HimiL8BRFMoSPWA0Ue0=",
-                    "allowed_ips": [
-                        "192.168.2.0/24",
-                        "192.168.10.0/24"
-                    ],
-                    "persistent_keepalive_interval": 25,
-                    "reserved": [
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ]
-        }
-    ],
     "dns": {
         "servers": [
             {
-                "tag": "google",
-                "type": "tls",
-                "server": "8.8.8.8"
+                "tag": "remote",
+                "type": "https",
+                "server": "1.1.1.1"
             },
             {
                 "tag": "local",
                 "type": "local"
-            },
-            {
-                "tag": "aliDNS",
-                "type": "tls",
-                "server": "223.5.5.5"
             },
             {
                 "tag": "fake-ip-dns-server",
@@ -77,16 +42,12 @@
             {
                 "action": "route",
                 "clash_mode": "Direct",
-                "server": "aliDNS"
+                "server": "local"
             },
             {
                 "action": "route",
                 "clash_mode": "Global",
-                "server": "google"
-            },
-            {
-                "wifi_ssid": ["SSSS"],
-                "server": "local"
+                "server": "rmote"
             },
             {
                 "action": "route",
@@ -98,7 +59,7 @@
                     "A",
                     "AAAA"
                 ],
-                "server": "aliDNS"
+                "server": "local"
             },
             {
                 "action": "route",
@@ -114,7 +75,7 @@
                     }
                 ],
                 "client_subnet": "114.114.114.114/24",
-                "server": "google"
+                "server": "rmote"
             },
             {
                 "action": "route",
@@ -149,7 +110,7 @@
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
-        "final": "google",
+        "final": "rmote",
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
@@ -591,12 +552,6 @@
         "auto_detect_interface": true,
         "rules": [
             {
-                "wifi_ssid": [
-                    "SSSS"
-                ],
-                "outbound": "🎯 直连"
-            },
-            {
                 "inbound": [
                     "tun-in",
                     "mixed-in"
@@ -642,6 +597,12 @@
                 "action": "route",
                 "ip_cidr": "192.168.10.0/24",
                 "outbound": "wg-ep"
+            },
+            {
+                "wifi_ssid": [
+                    "SSSS"
+                ],
+                "outbound": "🎯 直连"
             },
             {
                 "domain": [
