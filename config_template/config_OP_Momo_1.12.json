@@ -576,6 +576,10 @@
                 "action": "reject"
             },
             {
+                "rule_set": "Tracking",
+                "action": "reject"
+            },
+            {
                 "action": "route",
                 "ip_cidr": "192.168.2.0/24",
                 "outbound": "wg-ep"
@@ -757,10 +761,17 @@
         ],
         "rule_set": [
             {
+                "tag": "Tracking",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://github.com/666OS/rules/blob/release/singbox/Tracking.json",
+                "download_detour": "🌏 全球冲浪"
+            },
+            {
                 "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+                "url": "https://git.imee.me/https://github.com/666OS/rules/blob/release/singbox/domain/China.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -884,7 +895,7 @@
                 "tag": "Amazon",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+                "url": "https://git.imee.me/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -947,21 +958,21 @@
                 "tag": "SocialMedia",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
+                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "LocationDKS",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
+                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "AI",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
+                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
                 "download_detour": "🚀 国内直达"
             }
         ]
