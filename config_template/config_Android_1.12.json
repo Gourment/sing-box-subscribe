@@ -79,7 +79,7 @@
             {
                 "action": "route",
                 "clash_mode": "Global",
-                "server": "rmote"
+                "server": "remote"
             },
             {
                 "action": "route",
@@ -107,7 +107,7 @@
                     }
                 ],
                 "client_subnet": "114.114.114.114/24",
-                "server": "rmote"
+                "server": "remote"
             },
             {
                 "action": "route",
@@ -142,7 +142,7 @@
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
-        "final": "rmote",
+        "final": "remote",
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
