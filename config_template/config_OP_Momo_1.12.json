@@ -632,12 +632,12 @@
                 "outbound": "📍 抖快书定位"
             },
             {
-                "package_name": "com.zhiliaoapp.musically",
+                "rule_set": "TikTok",
                 "action": "route",
                 "outbound": "🎵 TikTok"
             },
             {
-                "package_name": "jp.naver.line.android",
+                "rule_set": "Line",
                 "outbound":"📱 Line"
            },
            {
