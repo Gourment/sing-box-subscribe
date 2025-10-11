@@ -757,14 +757,14 @@
                 "outbound": "🚀 国内直达"
             },
             {
-                "rule_set": "GeoSite-CN",
-                "action": "route",
-                "outbound": "🚀 国内直达"
-            },
-            {
                 "rule_set": "GeoLocation-!CN",
                 "action": "route",
                 "outbound": "🌏 全球冲浪"
+            },
+            {
+                "rule_set": "GeoSite-CN",
+                "action": "route",
+                "outbound": "🚀 国内直达"
             },
             {
                 "ip_is_private": true,
