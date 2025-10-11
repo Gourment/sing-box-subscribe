@@ -25,9 +25,9 @@
                 "server": "1.1.1.1"
             },
             {
-                "tag": "google",
+                "tag": "local",
                 "type": "tls",
-                "server": "8.8.8.8"
+                "server": "223.5.5.5"
             },
             {
                 "tag": "fake-ip-dns-server",
@@ -45,7 +45,7 @@
             {
                 "action": "route",
                 "clash_mode": "Global",
-                "server": "google"
+                "server": "remote"
             },
             {
                 "action": "route",
@@ -586,13 +586,7 @@
                 "outbound": "wg-ep"
             },
             {
-                "domain": [
-                    "clash.razord.top",
-                    "yacd.metacubex.one",
-                    "yacd.haishan.me",
-                    "d.metacubex.one"
-                ],
-                "action": "route",
+                "rule_set": "Private",
                 "outbound": "🎯 直连"
             },
             {
@@ -614,6 +608,10 @@
             {
                 "rule_set": "LocationDKS",
                 "outbound": "📍 抖快书定位"
+            },
+            {
+                "rule_set": "iCloud_Private_Relay",
+                "outbound": "🤖 人工智障"
             },
             {
                 "domain_suffix": [
@@ -649,7 +647,7 @@
                 "outbound": "🧿 YouTube"
             },
             {
-                "rule_set": "Geosite-Google",
+                "rule_set": "Google",
                 "action": "route",
                 "outbound": "📲 谷歌服务"
             },
@@ -664,7 +662,22 @@
                 "outbound": "🍎 Apple"
             },
             {
+                "rule_set": "AppleCN",
+                "action": "route",
+                "outbound": "🍎 Apple"
+            },
+            {
+                "rule_set": "AppleServices_Non_IP",
+                "action": "route",
+                "outbound": "🍎 Apple"
+            },
+            {
                 "rule_set": "Microsoft",
+                "action": "route",
+                "outbound": "🪟 Microsoft"
+            },
+            {
+                "rule_set": "Microsoft_CDN",
                 "action": "route",
                 "outbound": "🪟 Microsoft"
             },
@@ -674,7 +687,7 @@
                 "outbound": "🎵 TikTok"
             },
             {
-                "rule_set": "Geosite-Amazon",
+                "rule_set": "Amazon",
                 "outbound": "🛒 Amazon"
             },
             {
@@ -693,18 +706,23 @@
                 "outbound": "🚀 国内直达"
             },
             {
+                "rule_set": "Download_Domainset",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
+                "rule_set": "Download_Non_IP",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
                 "rule_set": "GeoLocation-!CN",
                 "action": "route",
                 "outbound": "🌏 全球冲浪"
             },
             {
-                "rule_set": "Geosite-Private",
+                "rule_set": "Private_IP",
                 "outbound": "🎯 直连"
-            },
-            {
-                "rule_set": "Telegram-ASN",
-                "action": "route",
-                "outbound": "📟 Telegram"
             },
             {
                 "rule_set": "AppleServices",
@@ -717,24 +735,67 @@
                 "outbound": "📟 Telegram"
             },
             {
-                "rule_set": "Geoip-CN",
+                "rule_set": "Telegram-ASN",
+                "action": "route",
+                "outbound": "📟 Telegram"
+            },
+            {
+                "rule_set": "Download_IP",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
+                "rule_set": "China_IP",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
+                "rule_set": "China_IP_IPV6",
                 "action": "route",
                 "outbound": "🚀 国内直达"
             }
         ],
         "rule_set": [
             {
-                "tag": "Geoip-CN",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-                "download_detour": "🚀 国内直达"
-            },
-            {
                 "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "China_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "China_IP_IPV6",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip_ipv6.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_Domainset",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/download.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/download.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_Non_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/download.json",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -745,16 +806,29 @@
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "Geosite-Private",
+                "tag": "Private",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
             },
             {
-                "tag": "Microsoft",
+                "tag": "Private_IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-microsoft.srs",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
+            },
+            {
+                "tag": "Microsoft",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Microsoft_CDN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -779,7 +853,7 @@
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "Geosite-Google",
+                "tag": "Google",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-google.srs",
@@ -807,10 +881,17 @@
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "Geosite-Amazon",
+                "tag": "Amazon",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AppleCN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cn.json",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -821,10 +902,24 @@
                 "download_detour": "🚀 国内直达"
             },
             {
+                "tag": "AppleServices_Non_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_services.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
                 "tag": "AppleServices",
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "iCloud_Private_Relay",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/icloud_private_relay.json",
                 "download_detour": "🚀 国内直达"
             },
             {
