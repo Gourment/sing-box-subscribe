@@ -389,6 +389,24 @@
             ]
         },
         {
+            "tag": "📱 Line",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [
+                {
+                    "action": "include",
+                    "keywords": [
+                        "泰国",
+                        "日本",
+                        "台湾",
+                        "韩国"
+                    ]
+                }
+            ]
+        },
+        {
             "tag": "🛒 Amazon",
             "type": "selector",
             "outbounds": [
@@ -614,8 +632,18 @@
                 "outbound": "📍 抖快书定位"
             },
             {
-                "rule_set": "iCloud_Private_Relay",
-                "outbound": "🤖 人工智障"
+                "package_name": "com.zhiliaoapp.musically",
+                "action": "route",
+                "outbound": "🎵 TikTok"
+            },
+            {
+                "package_name": "jp.naver.line.android",
+                "outbound":"📱 Line"
+           },
+           {
+                "rule_set": "YouTube",
+                "action": "route",
+                "outbound": "🧿 YouTube"
             },
             {
                 "domain_suffix": [
@@ -631,6 +659,16 @@
                 "outbound": "☁️ 云服务"
             },
             {
+                "rule_set": "Google",
+                "action": "route",
+                "outbound": "📲 谷歌服务"
+            },
+            {
+                "rule_set": "Telegram",
+                "action": "route",
+                "outbound": "📟 Telegram"
+            },
+            {
                 "rule_set": "GitHub",
                 "action": "route",
                 "outbound": "🤖 人工智障"
@@ -641,24 +679,8 @@
                 "outbound": "🤖 人工智障"
             },
             {
-                "rule_set": "SocialMedia",
-                "action": "route",
-                "outbound": "📱 海外社媒"
-            },
-            {
-                "rule_set": "YouTube",
-                "action": "route",
-                "outbound": "🧿 YouTube"
-            },
-            {
-                "rule_set": "Google",
-                "action": "route",
-                "outbound": "📲 谷歌服务"
-            },
-            {
-                "rule_set": "Telegram",
-                "action": "route",
-                "outbound": "📟 Telegram"
+                "rule_set": "iCloud_Private_Relay",
+                "outbound": "🤖 人工智障"
             },
             {
                 "rule_set": "AppleCDN",
@@ -686,28 +708,18 @@
                 "outbound": "🪟 Microsoft"
             },
             {
-                "rule_set": "TikTok",
-                "action": "route",
-                "outbound": "🎵 TikTok"
-            },
-            {
                 "rule_set": "Amazon",
                 "outbound": "🛒 Amazon"
+            },
+            {
+                "package_name": "SocialMedia",
+                "action": "route",
+                "outbound": "📱 海外社媒"
             },
             {
                 "rule_set": "SpeedTest",
                 "action": "route",
                 "outbound": "🥇 SpeedTest"
-            },
-            {
-                "rule_set": "ChinaDomain",
-                "action": "route",
-                "outbound": "🚀 国内直达"
-            },
-            {
-                "rule_set": "GeoSite-CN",
-                "action": "route",
-                "outbound": "🚀 国内直达"
             },
             {
                 "rule_set": "Download_Domainset",
@@ -720,13 +732,28 @@
                 "outbound": "🚀 国内直达"
             },
             {
+                "rule_set": "ChinaDomain",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
+                "rule_set": "GeoSite-CN",
+                "action": "route",
+                "outbound": "🚀 国内直达"
+            },
+            {
                 "rule_set": "GeoLocation-!CN",
                 "action": "route",
                 "outbound": "🌏 全球冲浪"
             },
             {
-                "rule_set": "Private_IP",
+                "ip_is_private": true,
                 "outbound": "🎯 直连"
+            },
+            {
+                "rule_set": "Telegram-ASN",
+                "action": "route",
+                "outbound": "📟 Telegram"
             },
             {
                 "rule_set": "AppleServices",
@@ -764,14 +791,14 @@
                 "tag": "Tracking",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://github.com/666OS/rules/blob/release/singbox/Tracking.json",
-                "download_detour": "🌏 全球冲浪"
+                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/Tracking.srs",
+                "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://git.imee.me/https://github.com/666OS/rules/blob/release/singbox/domain/China.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/China.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -820,26 +847,14 @@
                 "tag": "Private",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs",
+                "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "Private_IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
-            },
-            {
-                "tag": "Microsoft",
-                "type": "remote",
-                "format": "source",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json",
-                "download_detour": "🚀 国内直达"
-            },
-            {
-                "tag": "Microsoft_CDN",
-                "type": "remote",
-                "format": "source",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -871,6 +886,27 @@
                 "download_detour": "🚀 国内直达"
             },
             {
+                "tag": "TikTok",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Amazon",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Line",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-line.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
                 "tag": "Telegram",
                 "type": "remote",
                 "format": "source",
@@ -889,13 +925,6 @@
                 "type": "remote",
                 "format": "source",
                 "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
-                "download_detour": "🚀 国内直达"
-            },
-            {
-                "tag": "Amazon",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://git.imee.me/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -934,10 +963,17 @@
                 "download_detour": "🚀 国内直达"
             },
             {
-                "tag": "TikTok",
+                "tag": "Microsoft",
                 "type": "remote",
-                "format": "binary",
-                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Microsoft_CDN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json",
                 "download_detour": "🚀 国内直达"
             },
             {
@@ -958,21 +994,21 @@
                 "tag": "SocialMedia",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "LocationDKS",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
                 "tag": "AI",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
                 "download_detour": "🚀 国内直达"
             }
         ]
