@@ -24,7 +24,7 @@
         "servers": [
             {
                 "tag": "remote",
-                "type": "https",
+                "type": "tls",
                 "server": "1.1.1.1"
             },
             {
