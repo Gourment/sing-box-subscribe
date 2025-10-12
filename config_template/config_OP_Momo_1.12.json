@@ -792,7 +792,7 @@
                 "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "source",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.jsons",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json",
                 "download_detour": "🚀 国内直达"
             },
             {
