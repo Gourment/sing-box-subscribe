@@ -24,7 +24,7 @@
         "servers": [
             {
                 "tag": "remote",
-                "type": "tls",
+                "type": "https",
                 "server": "1.1.1.1"
             },
             {
@@ -679,11 +679,6 @@
                 "outbound": "☁️ 云服务"
             },
             {
-                "rule_set": "Geosite-Google",
-                "action": "route",
-                "outbound": "📲 谷歌服务"
-            },
-            {
                 "rule_set": "Telegram",
                 "action": "route",
                 "outbound": "📟 Telegram"
@@ -703,6 +698,11 @@
                 "outbound": "🤖 人工智障"
             },
             {
+                "rule_set": "Google",
+                "action": "route",
+                "outbound": "📲 谷歌服务"
+            },
+            {
                 "rule_set": "AppleCDN",
                 "action": "route",
                 "outbound": "🍎 Apple"
@@ -718,12 +718,12 @@
                 "outbound": "🍎 Apple"
             },
             {
-                "rule_set": "Microsoft",
+                "rule_set": "Microsoft_CDN",
                 "action": "route",
                 "outbound": "🪟 Microsoft"
             },
             {
-                "rule_set": "Microsoft_CDN",
+                "rule_set": "Microsoft",
                 "action": "route",
                 "outbound": "🪟 Microsoft"
             },
@@ -771,11 +771,6 @@
                 "outbound": "🎯 直连"
             },
             {
-                "rule_set": "Telegram-ASN",
-                "action": "route",
-                "outbound": "📟 Telegram"
-            },
-            {
                 "rule_set": "AppleServices",
                 "action": "route",
                 "outbound": "🍎 Apple"
@@ -818,7 +813,7 @@
                 "tag": "GeoSite-CN",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/China.srs",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json",
                 "download_detour": "🚀 国内直达"
             },
             {
