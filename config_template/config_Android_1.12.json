@@ -658,9 +658,9 @@
             },
             {
                 "package_name": "jp.naver.line.android",
-                "outbound":"📱 Line"
-           },
-           {
+                "outbound": "📱 Line"
+            },
+            {
                 "rule_set": "YouTube",
                 "action": "route",
                 "outbound": "🧿 YouTube"
@@ -802,230 +802,230 @@
             }
         ],
         "rule_set": [
-      {
-        "tag": "Tracking",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/Tracking.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "GeoSite-CN",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "China_IP",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/china_ip.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "China_IP_IPV6",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/china_ip_ipv6.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Download_Domainset",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/domainset/download.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Download_IP",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/download.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Download_Non_IP",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/download.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "GeoLocation-!CN",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Private",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Private_IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "OneDrive",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-onedrive.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "GitHub",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-github.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "YouTube",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Google",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-google.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "TikTok",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Amazon",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Line",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-line.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Telegram",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Telegram-IP",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Telegram-ASN",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "AppleCN",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cn.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "AppleCDN",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "AppleServices_Non_IP",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_services.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "AppleServices",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "iCloud_Private_Relay",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/domainset/icloud_private_relay.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Microsoft",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@raw/refs/heads/sing/geo/geosite/microsoft.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "Microsoft_CDN",
-        "type": "remote",
-        "format": "source",
-        "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "SpeedTest",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "ChinaDomain",
-        "type": "remote",
-        "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/Gourment/PrivateClashRules@main/Chinadomain.json",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "SocialMedia",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "LocationDKS",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
-        "download_detour": "🚀 国内直达"
-      },
-      {
-        "tag": "AI",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
-        "download_detour": "🚀 国内直达"
-      }
-    ]
-  }
+            {
+                "tag": "Tracking",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/Tracking.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "GeoSite-CN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "China_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "China_IP_IPV6",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip_ipv6.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_Domainset",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/download.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/download.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Download_Non_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/download.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "GeoLocation-!CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Private",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Private_IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "OneDrive",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-onedrive.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "GitHub",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-github.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "YouTube",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Google",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-google.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "TikTok",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-tiktok.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Amazon",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Line",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-line.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Telegram",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Telegram-IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Telegram-ASN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/telegram_asn.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AppleCN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cn.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AppleCDN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AppleServices_Non_IP",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_services.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AppleServices",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/ip/apple_services.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "iCloud_Private_Relay",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/icloud_private_relay.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Microsoft",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-microsoft.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Microsoft_CDN",
+                "type": "remote",
+                "format": "source",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "SpeedTest",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@refs/heads/rule-set/geosite-speedtest.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "ChinaDomain",
+                "type": "remote",
+                "format": "source",
+                "url": "https://testingcf.jsdelivr.net/gh/Gourment/PrivateClashRules@main/Chinadomain.json",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "SocialMedia",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/SocialMedia.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "LocationDKS",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/LocationDKS.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "AI",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/AI.srs",
+                "download_detour": "🚀 国内直达"
+            }
+        ]
+    }
 }
