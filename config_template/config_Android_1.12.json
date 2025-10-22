@@ -20,38 +20,6 @@
             "default_mode": "Rule"
         }
     },
-    "endpoints": [
-        {
-            "type": "wireguard",
-            "tag": "wg-ep",
-            "system": false,
-            "name": "",
-            "mtu": 1408,
-            "address": [
-                "192.168.10.10/32"
-            ],
-            "private_key": "UBwrwC0KViR4W2o/tmq0DJNSR2jIrcxY5Fs/sPPp3Gg=",
-            "listen_port": 10000,
-            "peers": [
-                {
-                    "address": "139.226.191.4",
-                    "port": 57907,
-                    "public_key": "yB0onPAZM8h2WCDZTiUk2YQZrWNFvYgWLbcfz+J3aBI=",
-                    "pre_shared_key": "+tfP+ULsF9T6MtwzizTkBjT5HimiL8BRFMoSPWA0Ue0=",
-                    "allowed_ips": [
-                        "192.168.2.0/24",
-                        "192.168.10.0/24"
-                    ],
-                    "persistent_keepalive_interval": 25,
-                    "reserved": [
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ]
-        }
-    ],
     "dns": {
         "servers": [
             {
