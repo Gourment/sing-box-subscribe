@@ -50,7 +50,8 @@
                 "action": "route",
                 "rule_set": [
                     "GeoSite-CN",
-                    "ChinaDomain"
+                    "ChinaDomain",
+                    "Domain-CN"
                 ],
                 "query_type": [
                     "A",
@@ -741,7 +742,7 @@
                 "outbound": "🌏 全球冲浪"
             },
             {
-                "rule_set": "GeoSite-CN",
+                "rule_set": ["GeoSite-CN", "Domain-CN"],
                 "action": "route",
                 "outbound": "🚀 国内直达"
             },
@@ -786,6 +787,13 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://git.imee.me/https://github.com/666OS/rules/raw/refs/heads/release/singbox/domain/Tracking.srs",
+                "download_detour": "🚀 国内直达"
+            },
+            {
+                "tag": "Domain-CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
