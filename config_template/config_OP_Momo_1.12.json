@@ -959,8 +959,8 @@
             {
                 "tag": "Microsoft",
                 "type": "remote",
-                "format": "source",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json",
+                "format": "binary",
+                "url": "https://gh.llkk.cc/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-microsoft.srs",
                 "download_detour": "🚀 国内直达"
             },
             {
